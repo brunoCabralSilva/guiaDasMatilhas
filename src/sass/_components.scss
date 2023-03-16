@@ -1,0 +1,13 @@
+.item-menu {
+  color: $cleanWhite;
+  font-family: $andika;
+  padding: 0 20px 0 20px;
+  text-decoration: none;
+  transition: color 1s;
+}
+
+.item-menu:hover {
+  color: $twilight;
+  text-decoration: underline $twilight;
+  text-underline-offset: 5px;
+}

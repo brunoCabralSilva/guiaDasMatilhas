@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-attachment: fixed;
+  background-image: url('../images/wallpapers/001.jpg');
+  background-position: top;
+  background-size: cover;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 30px 0 30px 0;
+  width: 100%;
+}

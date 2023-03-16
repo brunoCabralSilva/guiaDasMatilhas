@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
+import Carousel from "../components/Carousel";
 import { getBreeds } from "../firebase/querys";
 
-export default function Brreds() {
+export default function Breeds() {
   const [listOfBreeds, setListOfBreeds] = useState([]);
 
   useEffect(() => {
@@ -12,11 +13,13 @@ export default function Brreds() {
     query();
   }, []);
 
-  console.log(listOfBreeds);
-
   return(
     <div>
-      Breeds
+      <h1 className="title">Raças</h1>
+      <Carousel
+        list={ listOfBreeds }
+        dir="breeds"
+      />
     </div>
   );
 }

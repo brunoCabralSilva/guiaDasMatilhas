@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Carousel from "../components/Carousel";
 import { getTrybes } from "../firebase/querys";
 
 export default function Trybes() {
@@ -7,16 +8,25 @@ export default function Trybes() {
   useEffect(() => {
     const query = async () => {
       const trybes = await getTrybes();
-      setListOfTrybes(trybes);
+      const filteredData = trybes.map((trybe) => {
+        const dataValue = {
+          name: trybe.name,
+          image: trybe.image1,
+        };
+        return dataValue;
+      })
+      setListOfTrybes(filteredData);
     }
     query();
   }, []);
 
-  console.log(listOfTrybes);
-
   return(
     <div>
-      Trybes
+      <h1 className="title">Tribos</h1>
+      <Carousel
+        list={ listOfTrybes }
+        dir="trybes"
+      />
     </div>
   );
 }

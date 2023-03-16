@@ -13,7 +13,7 @@ export default function Navigation() {
         <Link className="item-menu" to='/breeds'> Raças </Link>
         <Link className="item-menu" to='/about'> Quem Somos </Link>
       </nav>
-      <nav className="mobile">
+      <nav className={`mobile ${showMenu? 'front' : 'back'}`}>
         <div
           className="button-menu"
           onClick={() => setShowMenu(!showMenu)}

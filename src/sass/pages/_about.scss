@@ -81,15 +81,15 @@
   font-family: $andika;
   font-size: 1rem;
   color: $cleanWhite;
-  background-color: black;
+  background-color: $pureBlack;
   border: solid 1px $cleanWhite;
   transition: background-color 1.5s;
 }
 
 .about-buttom:hover {
   background-color: $cleanWhite;
-  border: solid 1px black;
-  color: black;
+  border: solid 1px $pureBlack;
+  color: $pureBlack;
 }
 
 @media screen and (max-width: 700px) {

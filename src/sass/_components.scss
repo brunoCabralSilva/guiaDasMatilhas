@@ -19,7 +19,7 @@
   .swiper-button-next::after, .swiper-button-prev::after {
     font-size: 20px !important;
     -webkit-text-stroke-width: 1px; /* largura da borda */
-    -webkit-text-stroke-color: #000;
+    -webkit-text-stroke-color: $pureBlack;
   }
 
   .title-home {

@@ -1,0 +1,110 @@
+.about-data {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 10px;
+  gap: 10px;
+}
+
+.about-us {
+  grid-column-start: 1;
+  grid-column-end: 1;
+}
+
+.about-us-2 {
+  grid-column-start: 2;
+  grid-column-end: 2;
+}
+
+.about-img {
+  margin-bottom: 3px;
+  object-fit: cover;
+  height: 300px;
+  width: 100%;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  color: $cleanWhite;
+  font-family: $andika;
+  background-image: linear-gradient(to right, $blackOpacity8, $blackOpacity2);
+  padding: 10px 0;
+}
+
+.about-title {
+  font-size: 25px;
+  font-weight: 200;
+  width: 100%;
+  margin-bottom: 5px;
+  padding: 5px 0 0 0;
+  text-align: center;
+}
+
+.about-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-flow: wrap;
+  width: 100%;
+}
+
+.about-text {
+  padding: 25px;
+  margin-top: 5px;
+  line-height: 1.5rem;
+  text-align: left;
+  color: $cleanWhite;
+  font-family: $andika;
+  font-size: 1rem;
+  line-height: 1.75rem;
+  background-image: linear-gradient(to right, $blackOpacity8, $blackOpacity2);
+
+  p {
+    padding-top: 20px;
+  }
+}
+
+.about-div-buttom {
+  width: full;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.about-buttom {
+  padding: 0.5rem;
+  width: 50%;
+  margin-top: 1rem;
+  font-family: $andika;
+  font-size: 1rem;
+  color: $cleanWhite;
+  background-color: black;
+  border: solid 1px $cleanWhite;
+  transition: background-color 1.5s;
+}
+
+.about-buttom:hover {
+  background-color: $cleanWhite;
+  border: solid 1px black;
+  color: black;
+}
+
+@media screen and (max-width: 700px) {
+
+  .about-data {
+    grid-template-columns: 1fr ;
+  }
+
+  .about-us {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .about-us-2 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+}

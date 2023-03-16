@@ -24,7 +24,7 @@ export default function Auspices() {
     <div>
       <h1 className="title">Augúrios</h1>
       <Carousel
-        list={ listOfAuspices }
+        list={ [...listOfAuspices, ...listOfAuspices] }
         dir="auspices"
       />
     </div>

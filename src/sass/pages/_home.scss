@@ -1,0 +1,51 @@
+.title-home {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 85vh;
+  justify-content: center;
+}
+  
+.title-page {
+  color: $cleanWhite;
+  font-family: $amatic;
+  font-size: 80px;
+  font-weight: 400;
+  padding: 0 20px 0 20px;
+  text-align: center;
+}
+  
+.arrow-down {
+  margin-top: 15vh;
+  width: 80px;
+  cursor: pointer;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.arrow-down:hover {
+  animation: pulse 0.3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .arrow-down {
+    margin-top: 10vh;
+    width: 60px;
+  }
+
+  .title-home {
+    height: 100vh;
+  }
+
+  .title-page {
+    font-size: 50px;
+  }
+}

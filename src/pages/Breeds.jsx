@@ -17,7 +17,7 @@ export default function Breeds() {
     <div>
       <h1 className="title">Raças</h1>
       <Carousel
-        list={ listOfBreeds }
+        list={ [...listOfBreeds, ...listOfBreeds] }
         dir="breeds"
       />
     </div>

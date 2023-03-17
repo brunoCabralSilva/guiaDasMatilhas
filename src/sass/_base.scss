@@ -9,3 +9,22 @@ body {
   background-position: top;
   background-size: cover;
 }
+
+footer {
+  text-align: center;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $pureBlack;
+  color: $cleanWhite;
+  font-family: $andika;
+}
+
+@media screen and (max-width: 800px) {
+  footer {
+    flex-direction: column;
+    padding: 20px 20px;
+  }
+}

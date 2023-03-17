@@ -9,6 +9,7 @@ import About from './pages/About';
 import NotFound from './pages/NotFound';
 import Navigation from './components/Navigation';
 import Rituals from './pages/Rituals';
+import Footer from './components/Footer';
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="/rituals" element={<Rituals />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

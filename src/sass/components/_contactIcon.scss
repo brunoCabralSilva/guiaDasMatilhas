@@ -2,4 +2,10 @@ i {
   color: $cleanWhite;
   padding: 0px 8px 20px 8px;
   font-size: 20px;
+  transition: all 1s;
+}
+
+i:hover {
+  color: $twilight;
+  transform: scale(1.1);
 }

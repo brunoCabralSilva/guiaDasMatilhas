@@ -1,6 +1,8 @@
 import ContactIcon from '../components/ContactIcon';
+import { useNavigate } from 'react-router-dom';
 
 export default function About() {
+  const navigate = useNavigate();
   return(
     <div>
       <h1 className="title">Quem Somos</h1>
@@ -24,7 +26,7 @@ export default function About() {
                 <ContactIcon iconName="fa-facebook-f" link="https://www.facebook.com/garounordeste" />
               </div>
             </div>
-            <div className="about-text">
+            <div className="about-text" data-testid="about-garou-nordeste">
               <p className="pt-4">
                 O Garou Nordeste é um projeto que busca trazer toda a riqueza do Nordeste do Brasil ambientada para
                 "Lobisomem: O Apocalipse", cenário de RPG encontrado dentro do sistema WoD (Mundo das Trevas).
@@ -42,7 +44,8 @@ export default function About() {
               <div className="about-div-buttom">
                 <button
                   type="button"
-                  // onClick={() => history.push('/garou-nordeste')}
+                  data-testid="button-garouNordeste"
+                  onClick={() => navigate('/garou-nordeste')}
                   className="about-buttom">
                   Veja mais
                 </button>
@@ -60,7 +63,7 @@ export default function About() {
                 <ContactIcon iconName="fa-facebook-f" link="https://www.facebook.com/cronicasdakombi" />
               </div>
             </div>
-            <div className="about-text">
+            <div className="about-text" data-testid="about-matilha-da-kombi">
             <p className="pt-4">
                 A Matilha da Kombi, antes de qualquer coisa, sempre foi um grupo de amigos que se conheceu através do RPG. Surgiu em uma conversa despretensiosa no Facebook da Nação Garou, que em duas semanas virou uma mesa mensal e uma campanha marcante no Cenário de Lobisomem o Apocalipse, na Cidade de Niterói, no Rio de Janeiro. Diversos Garou já correram juntos dessa Matilha, mas ela começou com: Thiago Lucas, Rafael Trindade, Hanã Moreira, Diogo Linhares, Luiz "Caderninho" Vieira, Daniel Braga, Bruno De Biase, Marcus Laport e Rafael TrilhadoVento. Alguns ficaram pelo caminho, mas ainda ocupam seu espaço no memorial do nosso Caern - e quem sabe ainda voltem a correr conosco.
               </p>
@@ -70,7 +73,8 @@ export default function About() {
               <div className="about-div-buttom">
                 <button
                   type="button"
-                  // onClick={() => history.push('/matilha-da-kombi')}
+                  data-testid="button-kombi"
+                  onClick={() => navigate('/matilha-da-kombi')}
                   className="about-buttom">
                   Veja mais
                 </button>

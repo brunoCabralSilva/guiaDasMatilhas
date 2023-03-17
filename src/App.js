@@ -10,6 +10,8 @@ import NotFound from './pages/NotFound';
 import Navigation from './components/Navigation';
 import Rituals from './pages/Rituals';
 import Footer from './components/Footer';
+import GarouNordeste from './pages/GarouNordeste';
+import MatilhaDaKombi from './pages/MatilhaDaKombi';
 
 export default function App() {
   return (
@@ -22,6 +24,8 @@ export default function App() {
         <Route path="/breeds" element={<Breeds />} />
         <Route path="/auspices" element={<Auspices />} />
         <Route path="/rituals" element={<Rituals />} />
+        <Route path="/garou-nordeste" element={<GarouNordeste />} />
+        <Route path="/matilha-da-kombi" element={<MatilhaDaKombi />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

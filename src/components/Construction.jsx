@@ -10,7 +10,7 @@ export default class Construction extends React.Component {
           Estamos em Construção...
         </h2>
         <h2
-          className="text-center w-10/12"
+          className=""
         >
           Aguarde e em breve retornaremos mais fortes!
         </h2>

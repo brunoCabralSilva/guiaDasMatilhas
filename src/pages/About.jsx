@@ -1,5 +1,6 @@
 import ContactIcon from '../components/ContactIcon';
 import { useNavigate } from 'react-router-dom';
+import Footer from '../components/Footer';
 
 export default function About() {
   const navigate = useNavigate();
@@ -86,6 +87,7 @@ export default function About() {
             </div>
           </div>
         </div>
+        <Footer />
       </section>
     </div>
   );

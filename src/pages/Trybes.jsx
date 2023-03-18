@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Carousel from "../components/Carousel";
+import Footer from "../components/Footer";
 import { getTrybes } from "../firebase/querys";
 
 export default function Trybes() {
@@ -27,6 +28,7 @@ export default function Trybes() {
         list={ listOfTrybes }
         dir="trybes"
       />
+      <Footer />
     </div>
   );
 }

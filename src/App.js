@@ -9,7 +9,6 @@ import About from './pages/About';
 import NotFound from './pages/NotFound';
 import Navigation from './components/Navigation';
 import Rituals from './pages/Rituals';
-import Footer from './components/Footer';
 import GarouNordeste from './pages/GarouNordeste';
 import MatilhaDaKombi from './pages/MatilhaDaKombi';
 import Menu from './pages/Menu';
@@ -30,7 +29,6 @@ export default function App() {
         <Route path="/matilha-da-kombi" element={<MatilhaDaKombi />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <Footer />
     </div>
   );
 }

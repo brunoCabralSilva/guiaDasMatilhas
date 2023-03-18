@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Carousel from "../components/Carousel";
+import Footer from "../components/Footer";
 import { getAuspices } from "../firebase/querys";
 
 export default function Auspices() {
@@ -27,6 +28,7 @@ export default function Auspices() {
         list={ [...listOfAuspices, ...listOfAuspices] }
         dir="auspices"
       />
+      <Footer />
     </div>
   );
 }

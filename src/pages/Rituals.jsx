@@ -1,7 +1,13 @@
 import Construction from "../components/Construction";
+import Footer from "../components/Footer";
 
 export default function Rituals() {
   return(
-    <Construction />
+    <section>
+      <div className="not-found">
+        <Construction />
+      </div>
+      <Footer />
+    </section>
   );
 }

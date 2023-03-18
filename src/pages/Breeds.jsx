@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Carousel from "../components/Carousel";
+import Footer from "../components/Footer";
 import { getBreeds } from "../firebase/querys";
 
 export default function Breeds() {
@@ -20,6 +21,7 @@ export default function Breeds() {
         list={ [...listOfBreeds, ...listOfBreeds] }
         dir="breeds"
       />
+      <Footer />
     </div>
   );
 }

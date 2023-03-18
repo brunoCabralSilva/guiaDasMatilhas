@@ -1,7 +1,10 @@
+import Footer from "../components/Footer";
+
 export default function Menu() {
   return(
-    <div>
+    <div className="menu">
       Menu
+      <Footer />
     </div>
   );
 }

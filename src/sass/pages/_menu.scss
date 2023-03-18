@@ -1,8 +1,197 @@
 .menu {
-  background-color: $pureBlack;
-  height: 100vh;
   width: 100%;
-  position: absolute;
   top: 0;
   z-index: -1;
+  color: $cleanWhite;
+  margin-bottom: 10px;
+}
+
+.black-color {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: $blackOpacity8;
+  z-index: 0;
+}
+
+.menu-grid {
+  min-height: 70vh;
+  display: grid;
+  grid-template-areas:
+    "grid1 grid3 grid4 grid4"
+    "grid2 grid3 grid5 grid6";
+  gap: 10px;
+  margin: 0 10px 10px 10px;
+}
+
+.menu-presentation-mobile {
+  display: none;
+  position: relative;
+}
+
+.arrow-left {
+  width: 80px;
+  cursor: pointer;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  z-index: 1;
+}
+
+.arrow-left:hover {
+  animation: pulse 0.3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+h3 {
+  font-size: 1.875rem; /* 30px */
+  line-height: 2.25rem;
+  font-family: $andika;
+  text-align: right;
+}
+
+h4 {
+  font-size: 1.25rem; /* 20px */
+  line-height: 2.25rem;
+  font-family: $andika; 
+  text-align: right;
+}
+
+.img-item-grid {
+  width: 100%;
+  object-fit: cover;
+}
+
+.menu-grid-item {
+  background-color: $cleanWhite;
+  display:flex;
+  align-items: flex-end;
+  padding: 5px 10px;
+  a {
+    color: $cleanWhite;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: $andika;
+  }
+}
+
+.menu-grid-item:hover {
+  border: solid 1px $cleanWhite;
+}
+
+.menu-presentation {
+  display: flex;
+  align-items: center;
+  background-image: url("../../images/wallpapers/werewolfw20.png");
+  color: $cleanWhite;
+  justify-content: space-between;
+  margin: 0 10px 10px 10px;
+  position: relative;
+}
+
+.menu-text-presentation {
+  padding: 15px;
+  z-index: 1;
+}
+
+.menu-grid-item:nth-child(1) {
+  grid-area: grid1;
+  background-image: url("../../images/menu/garou_nordeste.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.menu-grid-item:nth-child(2) {
+  grid-area: grid2;
+  background-image: url("../../images/menu/kombi.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.menu-grid-item:nth-child(3) {
+  grid-area: grid3;
+  background-image: url("https://media3.giphy.com/media/eGNpmOUeIIYUB4P4Al/giphy.gif?cid=790b76113d42c68657c63c771efd15378e71009f3ac51c5f&rid=giphy.gif&ct=g");
+  background-size: cover;
+}
+
+.menu-grid-item:nth-child(4) {
+  grid-area: grid4;
+  background-image: url("https://64.media.tumblr.com/e3a999e989e0f17dac10be8b649707eb/af64a96270ae26f2-dd/s400x600/c1164ced59af1891c7c60ca70613a4d4643d0bb9.gifv");
+  background-position: center;
+  background-size: cover;
+}
+
+.menu-grid-item:nth-child(5) {
+  grid-area: grid5;
+  background-image: url("https://www.icegif.com/wp-content/uploads/waterfall-icegif.gif");
+  background-size: cover;
+}
+
+.menu-grid-item:nth-child(6) {
+  grid-area: grid6;
+  background-image: url("https://64.media.tumblr.com/4393e9e60edec4a6e821d5f14892a87a/af64a96270ae26f2-ea/s400x600/e8c3dae337ef0dadb718ac4718cac91631265f5b.gifv");
+  background-size: cover;
+}
+
+.menu-footer {
+  margin-top: 90vh;
+}
+
+@media screen and (max-width: 650px) {
+  .arrow-left {
+    padding: 15px;
+    width: 60px;
+  }
+  
+  .menu-presentation {
+    display: none;
+  }
+
+  .menu-grid-item {
+    p {
+      line-height: 1.2rem;
+    }
+  }
+
+  .menu-presentation-mobile {
+    display: flex;
+    align-items: center;
+    background-image: url("../../images/wallpapers/werewolfw20.png");
+    color: $cleanWhite;
+    justify-content: space-between;
+    margin: 0 10px 10px 10px;
+    position: relative;
+    .div-imgs {
+      display: flex;
+      padding-right: 10px;
+    }
+    img {
+      width: 4rem;
+      z-index: 1;
+    }
+  }
+
+
+  .menu-grid {
+    min-height: 100vh;
+  }
+
+  .menu-footer {
+    margin-top: 110vh;
+  }
+
+  .menu-grid {
+    grid-template-areas:
+      "grid1 grid3" 
+      "grid2 grid3"
+      "grid4 grid4"
+      "grid5 grid6";
+  }
 }

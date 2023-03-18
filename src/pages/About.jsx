@@ -1,9 +1,13 @@
 import ContactIcon from '../components/ContactIcon';
 import { useNavigate } from 'react-router-dom';
 import Footer from '../components/Footer';
+import { useEffect } from 'react';
 
 export default function About() {
   const navigate = useNavigate();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return(
     <div>
       <h1 className="title">Sobre</h1>

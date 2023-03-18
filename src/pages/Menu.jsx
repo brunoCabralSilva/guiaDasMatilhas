@@ -1,8 +1,13 @@
 import Footer from "../components/Footer";
 import { Link, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function Menu() {
   const navigate = useNavigate();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const list = [
     {
       img: 'garou_nordeste.jpg',
@@ -78,7 +83,7 @@ export default function Menu() {
         <div className="menu-grid">
           {
             list.map((nav, index) => (
-              <div
+              <Link to={nav.link }
                 key={index}
                 className="menu-grid-item"
               >
@@ -92,7 +97,7 @@ export default function Menu() {
                     <p> {nav.name} </p>
                   </Link>
                   }
-              </div>
+              </Link>
               ))
             }
         </div>

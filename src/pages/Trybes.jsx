@@ -7,6 +7,7 @@ export default function Trybes() {
   const [listOfTrybes, setListOfTrybes] = useState([]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const query = async () => {
       const trybes = await getTrybes();
       const filteredData = trybes.map((trybe) => {

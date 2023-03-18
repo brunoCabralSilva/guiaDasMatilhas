@@ -7,6 +7,7 @@ export default function Breeds() {
   const [listOfBreeds, setListOfBreeds] = useState([]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const query = async () => {
       const breeds = await getBreeds();
       setListOfBreeds(breeds);

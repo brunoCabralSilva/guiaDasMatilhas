@@ -7,6 +7,7 @@ export default function Auspices() {
   const [listOfAuspices, setListOfAuspices] = useState([]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const query = async () => {
       const auspices = await getAuspices();
       const filteredData = auspices.map((auspices) => {

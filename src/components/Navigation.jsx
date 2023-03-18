@@ -11,7 +11,7 @@ export default function Navigation() {
         <Link className="item-menu" to='/trybes' data-testid="menu-tribos"> Tribos </Link>
         <Link className="item-menu" to='/auspices'> Augúrios </Link>
         <Link className="item-menu" to='/breeds'> Raças </Link>
-        <Link className="item-menu" to='/about'> Quem Somos </Link>
+        <Link className="item-menu" to='/about'> Sobre </Link>
       </nav>
       <nav className={`mobile ${showMenu? 'front' : 'back'}`}>
         <div
@@ -57,7 +57,7 @@ export default function Navigation() {
               className="item-menu"
               onClick={() => setShowMenu(!showMenu)}
             >
-              Quem Somos
+              Sobre
             </Link>
           </div>
         }

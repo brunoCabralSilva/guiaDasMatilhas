@@ -5,7 +5,7 @@ export default function About() {
   const navigate = useNavigate();
   return(
     <div>
-      <h1 className="title">Quem Somos</h1>
+      <h1 className="title">Sobre</h1>
       <section>
         <div className="about-data">
           <div
@@ -27,20 +27,22 @@ export default function About() {
               </div>
             </div>
             <div className="about-text" data-testid="about-garou-nordeste">
-              <p className="pt-4">
-                O Garou Nordeste é um projeto que busca trazer toda a riqueza do Nordeste do Brasil ambientada para
-                "Lobisomem: O Apocalipse", cenário de RPG encontrado dentro do sistema WoD (Mundo das Trevas).
-              </p>
-              <p className="pt-4">Tudo começou quando três loucos, Bruno Gabryell, Felipe Brito e Jocélio Procópio, unidos por um
-                projeto
-                incrível chamado "Taverna Literária", decidiram investir em um novo projeto, totalmente voltado ao
-                nordeste e ao mundo dos Garou, para mostrar a todos do Brasil que há muito o que ser admirado em
-                nossa
-                região além de apenas fome, seca e pobreza.
-              </p>
-              <p className="pt-4">
-                Bruno Gabryell (Garou Nordeste) e Thiago Lucas (Matilha da Kombi) são os criadores deste site, sendo o primeiro o editor e o segundo o idealizador, revisor e tradutor!
-              </p>
+              <div className="about-just-text">
+                <p className="pt-4">
+                  O Garou Nordeste é um projeto que busca trazer toda a riqueza do Nordeste do Brasil ambientada para
+                  "Lobisomem: O Apocalipse", cenário de RPG encontrado dentro do sistema WoD (Mundo das Trevas).
+                </p>
+                <p className="pt-4">Tudo começou quando três loucos, Bruno Gabryell, Felipe Brito e Jocélio Procópio, unidos por um
+                  projeto
+                  incrível chamado "Taverna Literária", decidiram investir em um novo projeto, totalmente voltado ao
+                  nordeste e ao mundo dos Garou, para mostrar a todos do Brasil que há muito o que ser admirado em
+                  nossa
+                  região além de apenas fome, seca e pobreza.
+                </p>
+                <p className="pt-4">
+                  Bruno Gabryell (Garou Nordeste) e Thiago Lucas (Matilha da Kombi) são os criadores deste site, sendo o primeiro o editor e o segundo o idealizador, revisor e tradutor!
+                </p>
+              </div>
               <div className="about-div-buttom">
                 <button
                   type="button"
@@ -64,12 +66,14 @@ export default function About() {
               </div>
             </div>
             <div className="about-text" data-testid="about-matilha-da-kombi">
-            <p className="pt-4">
-                A Matilha da Kombi, antes de qualquer coisa, sempre foi um grupo de amigos que se conheceu através do RPG. Surgiu em uma conversa despretensiosa no Facebook da Nação Garou, que em duas semanas virou uma mesa mensal e uma campanha marcante no Cenário de Lobisomem o Apocalipse, na Cidade de Niterói, no Rio de Janeiro. Diversos Garou já correram juntos dessa Matilha, mas ela começou com: Thiago Lucas, Rafael Trindade, Hanã Moreira, Diogo Linhares, Luiz "Caderninho" Vieira, Daniel Braga, Bruno De Biase, Marcus Laport e Rafael TrilhadoVento. Alguns ficaram pelo caminho, mas ainda ocupam seu espaço no memorial do nosso Caern - e quem sabe ainda voltem a correr conosco.
-              </p>
-              <p className="pt-4">
-                Conhecidos pela criatividade e pelo humor ácido, logo as piadas internas romperam as barreiras da nossa mesa e começaram a ocupar o Feed do Rage Across Brasil. Com textos autorais e diversos memes sobre todos os cenários de WoD, logo alçamos voo solo e começamos a página Crônicas da Kombi, no facebook e no instagram, valorizando o que há de melhor no RPG: a diversão.
-              </p>
+              <div>
+                <p className="pt-4">
+                  A Matilha da Kombi, antes de qualquer coisa, sempre foi um grupo de amigos que se conheceu através do RPG. Surgiu em uma conversa despretensiosa no Facebook da Nação Garou, que em duas semanas virou uma mesa mensal e uma campanha marcante no Cenário de Lobisomem o Apocalipse, na Cidade de Niterói, no Rio de Janeiro. Diversos Garou já correram juntos dessa Matilha, mas ela começou com: Thiago Lucas, Rafael Trindade, Hanã Moreira, Diogo Linhares, Luiz "Caderninho" Vieira, Daniel Braga, Bruno De Biase, Marcus Laport e Rafael TrilhadoVento. Alguns ficaram pelo caminho, mas ainda ocupam seu espaço no memorial do nosso Caern - e quem sabe ainda voltem a correr conosco.
+                </p>
+                <p className="pt-4">
+                  Conhecidos pela criatividade e pelo humor ácido, logo as piadas internas romperam as barreiras da nossa mesa e começaram a ocupar o Feed do Rage Across Brasil. Com textos autorais e diversos memes sobre todos os cenários de WoD, logo alçamos voo solo e começamos a página Crônicas da Kombi, no facebook e no instagram, valorizando o que há de melhor no RPG: a diversão.
+                </p>
+              </div>
               <div className="about-div-buttom">
                 <button
                   type="button"

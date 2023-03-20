@@ -1,4 +1,4 @@
-import { getAuspices, getBreeds, getTrybes } from "../../firebase/querys";
+import { getAuspices, getBreeds, getTrybes } from "../../back/querys";
 
 export async function queryDataValues(dispatch) {
     const trybes = await getTrybes();

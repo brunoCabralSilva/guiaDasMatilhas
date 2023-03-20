@@ -10,6 +10,7 @@ import NotFound from './pages/NotFound';
 import Navigation from './components/Navigation';
 import Blog from './pages/Blog';
 import Gifts from './pages/Gifts';
+import Login from './pages/admin/Login';
 import Admin from './pages/admin/Admin';
 import Friends from './pages/Friends';
 import GarouNordeste from './pages/GarouNordeste';
@@ -29,7 +30,8 @@ export default function App() {
         <Route path="/auspices" element={<Auspices />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/parceiros" element={<Friends />} />
-        <Route path="/login" element={<Admin />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/admin" element={<Admin />} />
         <Route path="/dons" element={<Gifts />} />
         <Route path="/garou-nordeste" element={<GarouNordeste />} />
         <Route path="/matilha-da-kombi" element={<MatilhaDaKombi />} />

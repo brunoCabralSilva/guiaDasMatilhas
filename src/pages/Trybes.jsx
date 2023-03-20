@@ -1,32 +1,25 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Carousel from "../components/Carousel";
 import Footer from "../components/Footer";
-import { getTrybes } from "../firebase/querys";
+import { queryDataValues } from "../redux/actions";
 
 export default function Trybes() {
-  const [listOfTrybes, setListOfTrybes] = useState([]);
+  const globalState = useSelector((state) => state);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    const query = async () => {
-      const trybes = await getTrybes();
-      const filteredData = trybes.map((trybe) => {
-        const dataValue = {
-          name: trybe.name,
-          image: trybe.image1,
-        };
-        return dataValue;
-      })
-      setListOfTrybes(filteredData);
+    if (globalState.listOfTrybes.length === 0) {
+      queryDataValues(dispatch);
     }
-    query();
   }, []);
 
   return(
     <div>
       <h1 className="title">Tribos</h1>
       <Carousel
-        list={ listOfTrybes }
+        list={ globalState.listOfTrybes }
         dir="trybes"
       />
       <Footer />

@@ -3,12 +3,21 @@ const INITIAL_STATE = {
   listOfBreeds: [],
   listOfAuspices: [],
   listOfGifts: [],
+  token: '',
 };
 
 const reducer = (state = INITIAL_STATE, action) => {
   switch(action.type) {
     case "CARREGAMENTO_INICIAL":
-      return action.payload;
+      return {
+        ...state,
+        ...action.payload,
+      };
+    case "UPDATE_TOKEN":
+      return {
+        ...state,
+        token: action.payload,
+      };
     default:
       return state;
   };

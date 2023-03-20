@@ -14,8 +14,13 @@ export const getUser = async (email, password) => {
     if (e && p) return item;
     return null;
   });
-  return data;
+  return { 
+    email: data._document.data.value.mapValue.fields.email.stringValue,
+    name: data._document.data.value.mapValue.fields.name.stringValue,
+    role: data._document.data.value.mapValue.fields.role.stringValue,
+  }
 }
+
 
 export const login = async (email, password) => {
   console.log(password);
@@ -24,13 +29,13 @@ export const login = async (email, password) => {
   console.log('encrypted', encryptedPass);
 
   const response = await getUser(email, encryptedPass);
-  console.log('busca', response);
 
   if (!response) return null;
   
   return {
-    name: response._document.data.value.mapValue.fields.name.stringValue,
-    email: response._document.data.value.mapValue.fields.email.stringValue,
-    role: response._document.data.value.mapValue.fields.role.stringValue,
+    name: response.name,
+    email: response.email,
+    role: response.role,
+    token: Math.random().toString(36),
   };
 }

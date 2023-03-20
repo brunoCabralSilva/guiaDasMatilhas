@@ -1,6 +1,6 @@
 import { getAuspices, getBreeds, getTrybes } from "../../back/querys";
 
-export async function queryDataValues(dispatch) {
+export const queryDataValues = async (dispatch) => {
     const trybes = await getTrybes();
     const listOfBreeds = await getBreeds();
     const auspices = await getAuspices();
@@ -31,4 +31,11 @@ export async function queryDataValues(dispatch) {
         listOfGifts,
       }
     });
+}
+
+export const actionToken = (token) => {
+  return {
+    type: "UPDATE_TOKEN",
+    payload: token,
+  }
 }

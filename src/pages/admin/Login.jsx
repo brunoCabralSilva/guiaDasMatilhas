@@ -1,14 +1,22 @@
 import { useEffect, useState } from "react";
 import Footer from "../../components/Footer";
+import { actionToken } from '../../redux/actions/index';
 import { login } from "../../back/login";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function Admin() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const globalState = useSelector((state) => state);
+
   useEffect(() => {
     window.scrollTo(0, 0);
+    if (globalState.token.length === 13) {
+      navigate('/admin');
+    }
   }, []);
 
   const enableButton = () => {
@@ -22,6 +30,7 @@ export default function Admin() {
   const loginUser = async () => {
     const logs = await login(email, password);
     if (logs) {
+      dispatch(actionToken(logs.token));
       navigate('/admin');
     }
   };

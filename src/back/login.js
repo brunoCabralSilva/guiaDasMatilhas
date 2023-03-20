@@ -10,7 +10,6 @@ export const getUser = async (email, password) => {
   const querySnapshot = await getDocs(getData);
 
   if (querySnapshot._docs && querySnapshot._docs.length > 0) {
-    console.log(querySnapshot);
     return { 
       email: querySnapshot._docs[0]._document.data.value.mapValue.fields.email.stringValue,
       name: querySnapshot._docs[0]._document.data.value.mapValue.fields.name.stringValue,

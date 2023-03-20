@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/guiadasmatilhas/static/css/main.8e3f5b46.css",
-    "main.js": "/guiadasmatilhas/static/js/main.d88ad5c4.js",
+    "main.js": "/guiadasmatilhas/static/js/main.1f2d1897.js",
     "static/media/apresentation02.gif": "/guiadasmatilhas/static/media/apresentation02.38ff2f441a2949957d5f.gif",
     "static/media/getOfFenris_transp.png": "/guiadasmatilhas/static/media/getOfFenris_transp.69900d85ced254f824ed.png",
     "static/media/blackSpiralDancers_transp.png": "/guiadasmatilhas/static/media/blackSpiralDancers_transp.7ac82b882ce4ac282f3f.png",
@@ -154,10 +154,10 @@
     "static/media/wolf.png": "/guiadasmatilhas/static/media/wolf.53e9d69ce188d5a005e8.png",
     "index.html": "/guiadasmatilhas/index.html",
     "main.8e3f5b46.css.map": "/guiadasmatilhas/static/css/main.8e3f5b46.css.map",
-    "main.d88ad5c4.js.map": "/guiadasmatilhas/static/js/main.d88ad5c4.js.map"
+    "main.1f2d1897.js.map": "/guiadasmatilhas/static/js/main.1f2d1897.js.map"
   },
   "entrypoints": [
     "static/css/main.8e3f5b46.css",
-    "static/js/main.d88ad5c4.js"
+    "static/js/main.1f2d1897.js"
   ]
 }

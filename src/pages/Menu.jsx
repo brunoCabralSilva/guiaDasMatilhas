@@ -31,8 +31,8 @@ export default function Menu() {
     },
     {
       img: 'https://www.icegif.com/wp-content/uploads/waterfall-icegif.gif',
-      name: 'Admin',
-      link: '/login',
+      name: 'Rituais',
+      link: '/rituals',
     },
     {
       img: 'https://64.media.tumblr.com/4393e9e60edec4a6e821d5f14892a87a/af64a96270ae26f2-ea/s400x600/e8c3dae337ef0dadb718ac4718cac91631265f5b.gifv',
@@ -83,7 +83,7 @@ export default function Menu() {
         <div className="menu-grid">
           {
             list.map((nav, index) => (
-              <Link to={nav.link }
+              <button onClick={() => navigate(`${nav.link}`) }
                 key={index}
                 className="menu-grid-item"
               >
@@ -97,7 +97,7 @@ export default function Menu() {
                     <p> {nav.name} </p>
                   </Link>
                   }
-              </Link>
+              </button>
               ))
             }
         </div>

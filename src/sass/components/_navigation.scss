@@ -25,7 +25,29 @@
   text-underline-offset: 5px;
 }
 
-@media screen and (max-width: 540px) {
+.button-login-nav {
+  position: absolute;
+  right: 10px;
+  padding: 5px 10px;
+  font-family: $andika;
+  font-weight: 600;
+  background-color: $darkBlue;
+  color: $cleanWhite;
+  border: none;
+  cursor: pointer;
+  transition: background-Color 1s;
+}
+
+.button-login-nav:hover {
+  background-color: $darkDarkBlue;
+}
+
+@media screen and (max-width: 600px) {
+
+  .button-login-nav {
+    display: none;
+  }
+
   .default {
     display: none;
     z-index: -1;
@@ -45,10 +67,6 @@
   .front2 {
     z-index: 40;
   }
-
-  // .back {
-  //   z-index: -1;
-  // }
 
   .item {
     height: 3px;
@@ -102,5 +120,10 @@
 
   .item-menu {
     padding: 20px 0 0 0;
+    font-weight: 600;
+  }
+
+  .item-login {
+    padding-top: 80px;
   }
 }

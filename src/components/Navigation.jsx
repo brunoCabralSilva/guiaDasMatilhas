@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Navigation() {
   const [showMenu, setShowMenu] = useState(false);
+  const navigate = useNavigate();
 
   return(
     <header>
@@ -12,6 +14,12 @@ export default function Navigation() {
         <Link className="item-menu" to='/auspices'> Augúrios </Link>
         <Link className="item-menu" to='/breeds'> Raças </Link>
         <Link className="item-menu" to='/about'> Sobre </Link>
+        <button
+          className="button-login-nav"
+          onClick={ () => navigate('/login') }
+        >
+          Login
+        </button>
       </nav>
       <div
         className="button-menu front2"
@@ -57,6 +65,13 @@ export default function Navigation() {
             onClick={() => setShowMenu(!showMenu)}
           >
             Sobre
+          </Link>
+          <Link
+            to="/login"
+            className="item-menu item-login"
+            onClick={() => setShowMenu(!showMenu)}
+          >
+            Login
           </Link>
         </nav>
       }

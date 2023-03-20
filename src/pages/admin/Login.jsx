@@ -15,9 +15,10 @@ export default function Admin() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    if (globalState.token.length === 13) {
+    if (globalState.token !== '') {
       navigate('/admin');
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const enableButton = () => {
@@ -50,6 +51,9 @@ export default function Admin() {
           className="login-image"
         />
         <div className="div-login">
+          { errorAuth 
+            ? <div className="error-message">Email ou senha incorretos</div>
+            : <div className="error-message" /> }
           <input
             className="admin-input"
             value={email}
@@ -64,14 +68,22 @@ export default function Admin() {
             onChange={ (e) => setPassword(e.target.value) }
             type="password"
           />
+          {
+            document.addEventListener('keydown', function(e) {
+              if(e.key === "Enter"){
+                document.getElementById("btn-login").click();
+              }
+            })
+          }
           <button
             className={`${enableButton() ? 'admin-button-disabled' : 'admin-button-enable'} admin-button` }
+            id="btn-login"
+            onkeypress={"loginUser()"}
             disabled={ enableButton() }
             onClick={ loginUser }
           >
             Login
           </button>
-          { errorAuth && <div>Error</div> }
         </div>
       </section>
       <Footer />

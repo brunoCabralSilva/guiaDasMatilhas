@@ -11,11 +11,11 @@ import Navigation from './components/Navigation';
 import Blog from './pages/Blog';
 import Gifts from './pages/Gifts';
 import Login from './pages/admin/Login';
-import Admin from './pages/admin/Admin';
 import Friends from './pages/Friends';
 import GarouNordeste from './pages/GarouNordeste';
 import MatilhaDaKombi from './pages/MatilhaDaKombi';
 import Menu from './pages/Menu';
+import Rituals from './pages/Rituals';
 
 export default function App() {
   return (
@@ -31,7 +31,7 @@ export default function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/parceiros" element={<Friends />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/admin" element={<Admin />} />
+        <Route path="/rituals" element={<Rituals />} />
         <Route path="/dons" element={<Gifts />} />
         <Route path="/garou-nordeste" element={<GarouNordeste />} />
         <Route path="/matilha-da-kombi" element={<MatilhaDaKombi />} />

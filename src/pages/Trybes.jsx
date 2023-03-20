@@ -13,6 +13,7 @@ export default function Trybes() {
     if (globalState.listOfTrybes.length === 0) {
       queryDataValues(dispatch);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return(

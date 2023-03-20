@@ -8,7 +8,10 @@ import Breeds from './pages/Breeds';
 import About from './pages/About';
 import NotFound from './pages/NotFound';
 import Navigation from './components/Navigation';
-import Rituals from './pages/Rituals';
+import Blog from './pages/Blog';
+import Gifts from './pages/Gifts';
+import Admin from './pages/admin/Admin';
+import Friends from './pages/Friends';
 import GarouNordeste from './pages/GarouNordeste';
 import MatilhaDaKombi from './pages/MatilhaDaKombi';
 import Menu from './pages/Menu';
@@ -24,7 +27,10 @@ export default function App() {
         <Route path="/trybes" element={<Trybes />} />
         <Route path="/breeds" element={<Breeds />} />
         <Route path="/auspices" element={<Auspices />} />
-        <Route path="/rituals" element={<Rituals />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/parceiros" element={<Friends />} />
+        <Route path="/login" element={<Admin />} />
+        <Route path="/dons" element={<Gifts />} />
         <Route path="/garou-nordeste" element={<GarouNordeste />} />
         <Route path="/matilha-da-kombi" element={<MatilhaDaKombi />} />
         <Route path="*" element={<NotFound />} />

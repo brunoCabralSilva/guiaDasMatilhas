@@ -22,7 +22,7 @@ export default function Menu() {
     {
       img: 'https://media3.giphy.com/media/eGNpmOUeIIYUB4P4Al/giphy.gif?cid=790b76113d42c68657c63c771efd15378e71009f3ac51c5f&rid=giphy.gif&ct=g',
       name: 'Blog',
-      link: '/page',
+      link: '/blog',
     },
     {
       img: 'https://64.media.tumblr.com/e3a999e989e0f17dac10be8b649707eb/af64a96270ae26f2-dd/s400x600/c1164ced59af1891c7c60ca70613a4d4643d0bb9.gifv',

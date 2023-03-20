@@ -38,19 +38,26 @@
   width: 100%;
   transition: color 1.5s;
   border: 1px solid white;
+  cursor: pointer;
+  font-weight: 800;
 }
 
 .admin-button-disabled {
-  background-color: $blackOpacity2;
+  background-color: $grayColor;
+}
+
+.admin-button-disabled:hover {
+  transition: color 1.5s;
+  background-color: $grayDarkColor;
 }
 
 .admin-button-enable {
   background-color: $blackOpacity8;
 }
 
-.admin-button:hover {
+.admin-button-enable:hover {
   transition: color 1.5s;
-  background-color: $blackOpacity8;
+  background-color: $redColor;
 }
 
 

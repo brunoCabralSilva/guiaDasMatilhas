@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 export default function Admin() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [errorAuth, setErrorAuth] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const globalState = useSelector((state) => state);
@@ -32,6 +33,11 @@ export default function Admin() {
     if (logs) {
       dispatch(actionToken(logs.token));
       navigate('/admin');
+    } else {
+      setErrorAuth(true);
+      setTimeout(() => {
+        setErrorAuth(false);
+      }, 3000);
     }
   };
 
@@ -65,6 +71,7 @@ export default function Admin() {
           >
             Login
           </button>
+          { errorAuth && <div>Error</div> }
         </div>
       </section>
       <Footer />

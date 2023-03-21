@@ -6,7 +6,6 @@ import 'swiper/css/navigation';
 
 export default function Carousel({ list, dir }) {
   const navigate = useNavigate();
-  console.log(list);
   return(
     <Swiper
       breakpoints={{

@@ -22,34 +22,53 @@ export default function Info() {
     switch(params.tipo) {
       case("tribos"):
         return (
-          <div>
-            { data.fdv && data.fdv.integerValue }
-            { data.image1 && data.image1.stringValue }
-            { data.image2 && data.image2.stringValue }
-            { data.image3 && data.image3.stringValue }
-            { data.image4 && data.image4.stringValue }
-            { data.image5 && data.image5.stringValue }
-            { data.name && data.name.stringValue }
-            { data.situation && data.situation.stringValue }
+          <div className="data-specific">
+            <div className="info-details">
+              <p>Totem: { data.totem && data.totem.stringValue }</p>
+              <p>Força de Vontade Inicial: { data.fdv && data.fdv.integerValue }</p>
+              <p>Situação da Tribo: { data.situation && data.situation.stringValue }</p>
+              <p>Restrições de Antecedentes: { data.restriction && data.restriction.stringValue }</p>
+            </div>
+            <div className="presentation-img">
+              {
+                data.image &&
+                  <img
+                    src={require(`../images/${params.tipo}/${data.image.arrayValue.values[4].stringValue}`)}
+                    className="info-image-white"
+                    alt={data.name}
+                  />
+              }
+            </div>
+            <div className="info-description">
+              { 
+                data.description && data.description.arrayValue.values.map((desc) => (
+                  <p>{ desc.stringValue }</p>
+                ))
+              }
+            </div>
+            <div className="data-div-img">
+              {
+                data.image &&
+                  <img
+                    src={require(`../images/${params.tipo}/${data.image.arrayValue.values[3].stringValue}`)}
+                    className="info-image-glifo"
+                    alt={data.name}
+                  />
+              }
+            </div>
           </div>
         );
       case("augurios"):
         return (
           <div>
-            { data.image1 && data.image1.stringValue }
-            { data.image2 && data.image2.stringValue }
-            { data.image3 && data.image3.stringValue }
             { data.moon && data.moon.stringValue }
-            { data.name && data.name.stringValue }
             { data.rage && data.rage.integerValue }
           </div>
         );
       default:
         return (
           <div>
-            { data.image && data.image.stringValue }
             { data.gnose && data.gnose.integerValue }
-            { data.name && data.name.stringValue }
           </div>
         );
     }
@@ -57,10 +76,14 @@ export default function Info() {
 
   return(
     <div className="principal-div">
-      <h1 className="title">
-        { data.name && data.name.stringValue }
-      </h1>
-      { returnByType() }
+      <div className="info-element">
+        <div className="info-data">
+          <h1 className="title">
+            { data.name && data.name.stringValue }
+          </h1>
+          { returnByType() }
+        </div>
+      </div>
       <Footer />
     </div>
   );

@@ -6,6 +6,7 @@ import 'swiper/css/navigation';
 
 export default function Carousel({ list, dir }) {
   const navigate = useNavigate();
+  console.log(list);
   return(
     <Swiper
       breakpoints={{
@@ -48,7 +49,7 @@ export default function Carousel({ list, dir }) {
           >
             <img
               className="img-carousel"
-              src={require(`../images/${dir}/${item.image.stringValue}`)}
+              src={require(`../images/${dir}/${item.image.arrayValue.values[0].stringValue}`)}
               alt={ item.name.stringValue }
             />
             <h1 className="item-carousel-text">{ item.name.stringValue }</h1>

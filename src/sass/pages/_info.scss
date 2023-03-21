@@ -1,0 +1,66 @@
+.info-element {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.data-div-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-image: linear-gradient(to right, $blackOpacity8, $blackOpacity2);
+  margin: 10px 0;
+  padding: 20px 0;
+}
+
+.info-image {
+  width: 50%;
+  object-fit: contain;
+  margin: 0 0 10px 10px;
+}
+
+.info-image-glifo {
+  width: 10%;
+}
+
+.info-data {
+  width: 100%;
+}
+
+.info-details {
+  color: $cleanWhite;
+  font-weight: 200;
+  font-family: $andika;
+  padding: 20px 0 20px 20px;
+  margin: 10px 0;
+  background-image: linear-gradient(to right, $blackOpacity8, $blackOpacity2);
+}
+
+.info-image-white {
+  float: left;
+  width: 80%;
+  object-fit: contain;
+  padding: 20px;
+}
+
+.data-specific {
+  color: $cleanWhite;
+  font-size: 3vh;
+  font-family: $andika;
+  margin-left: 10px;
+}
+
+.presentation-img {
+  width: 50%;
+  padding-right: 20px;
+}
+
+.info-description {
+  background-image: linear-gradient(to right, $blackOpacity8, $blackOpacity2);
+  padding: 20px;
+
+  p {
+    padding-bottom: 15px;
+  }
+}

@@ -18,7 +18,6 @@ export default function Gifts() {
       {/* <FilterGifts type="books" name="Livros" /> */}
       <button
         className="search-button-gifts"
-        onClick=""
       >
         Realizar Busca
       </button>

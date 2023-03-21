@@ -27,7 +27,6 @@ export default function FilterGifts({ type, dir }) {
     }
   };
 
-  console.log(data);
   return(
     <section>
       <div
@@ -35,7 +34,7 @@ export default function FilterGifts({ type, dir }) {
         onClick={ () => setMinimize(!minimize) }
         >
         <h2 className="title-filter">{ returnName() }</h2>
-        <div className>
+        <div>
           {
             minimize
             ? <img
@@ -60,8 +59,8 @@ export default function FilterGifts({ type, dir }) {
         >
           <div className="grid-filters">
             {
-              data.length > 0 && data.map((item) => (
-                <div className="item-filter item-filter-not-selected">
+              data.length > 0 && data.map((item, index) => (
+                <div key={index} className="item-filter item-filter-not-selected">
                   {
                   item.image && <img
                     src={require(`../images/${dir}/${ dir === 'tribos' ? item.image.arrayValue.values[3].stringValue : item.image.arrayValue.values[0].stringValue}`)}

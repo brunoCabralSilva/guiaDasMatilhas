@@ -100,7 +100,7 @@ export default function Info() {
     <div className="principal-div">
       <div className="info-element">
         <div className="info-data">
-          <h1 className="title">
+          <h1 className="title-info">
             { data.name && data.name.stringValue }
           </h1>
           <div className="data-specific">

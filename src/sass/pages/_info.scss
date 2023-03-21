@@ -60,6 +60,7 @@
 .link-reference {
   text-decoration: none;
   color: $twilight;
+  word-wrap: break-word;
 }
 
 .link-reference:hover {
@@ -82,5 +83,61 @@
 
   p {
     padding-bottom: 15px;
+  }
+}
+
+.title-info {
+  color: $cleanWhite;
+  font-weight: 200;
+  margin: 0 0 0 10px !important;
+  font-family: $andika;
+  padding: 10px 20px;
+  background-image: linear-gradient(to right, $blackOpacity8, $blackOpacity2);
+  line-height: 2.2rem;
+}
+
+@media screen and (max-width: 600px) {
+  .info-data {
+    margin-right: 10px;
+  }
+
+  .info-details {
+    color: $cleanWhite;
+    font-weight: 200;
+    font-family: $andika;
+    padding: 20px;
+    background-image: linear-gradient(to right, $blackOpacity8, $blackOpacity2);
+  }
+
+  .info-image-white {
+    float: none;
+    width: 100%;
+    object-fit: contain;
+    padding: 0px;
+  }
+
+  .info-image-auspices-breeds {
+    float: none;
+    width: 80%;
+    object-fit: contain;
+    padding: 20px;
+  }
+
+  .presentation-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-right: 0;
+    background-image: linear-gradient(to right, $blackOpacity8, $blackOpacity2);
+  }
+
+  .data-div-img {
+    margin: 10px 10px 10px 0;
+    padding: 20px 0;
+  }
+
+  .info-image-glifo {
+    width: 40%;
   }
 }

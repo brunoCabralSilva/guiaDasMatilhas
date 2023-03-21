@@ -9,7 +9,7 @@ export default function About() {
     window.scrollTo(0, 0);
   }, []);
   return(
-    <div>
+    <div className="title-carousel">
       <h1 className="title">Sobre</h1>
       <section>
         <div className="about-data">

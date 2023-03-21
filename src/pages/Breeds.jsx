@@ -17,7 +17,7 @@ export default function Breeds() {
   }, []);
 
   return(
-    <div>
+    <div className="title-carousel">
       <h1 className="title">Raças</h1>
       <Carousel
         list={ [...globalState.listOfBreeds, ...globalState.listOfBreeds] }

@@ -2,7 +2,6 @@
   color: $cleanWhite;
   font-size: 6vh;
   font-weight: 200;
-  margin: 0 0 0 10px !important;
   font-family: $andika;
   padding-left: 20px;
   background-image: linear-gradient(to right, $blackOpacity8, $blackOpacity2);
@@ -12,6 +11,11 @@
 .principal-div {
   display: flex;
   flex-direction: column;
+  margin: 0 10px 10px 10px;
+}
+
+.title-carousel {
+  margin: 0 10px;
 }
 
 .not-found {
@@ -33,6 +37,10 @@
 @media screen and (max-width: 480px) {
   .title {
     margin: 0 0 0 0 !important;
+  }
+
+  .title-carousel {
+    margin: 10px;
   }
 }
 

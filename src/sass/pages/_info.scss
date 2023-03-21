@@ -55,7 +55,6 @@
   color: $cleanWhite;
   font-size: 2.5vh;
   font-family: $andika;
-  margin-left: 10px;
 }
 .link-reference {
   text-decoration: none;
@@ -89,7 +88,6 @@
 .title-info {
   color: $cleanWhite;
   font-weight: 200;
-  margin: 0 0 0 10px !important;
   font-family: $andika;
   padding: 10px 20px;
   background-image: linear-gradient(to right, $blackOpacity8, $blackOpacity2);
@@ -97,9 +95,6 @@
 }
 
 @media screen and (max-width: 600px) {
-  .info-data {
-    margin-right: 10px;
-  }
 
   .info-details {
     color: $cleanWhite;
@@ -139,5 +134,11 @@
 
   .info-image-glifo {
     width: 40%;
+  }
+
+  .info-description, .info-details {
+    p {
+      text-align: center;
+    }
   }
 }

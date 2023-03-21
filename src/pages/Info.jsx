@@ -97,7 +97,7 @@ export default function Info() {
   };
 
   return(
-    <div className="principal-div">
+    <div className="title-carousel">
       <div className="info-element">
         <div className="info-data">
           <h1 className="title-info">

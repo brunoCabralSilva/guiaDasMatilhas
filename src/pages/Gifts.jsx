@@ -1,15 +1,17 @@
 import { useEffect } from "react";
-import Construction from "../components/Construction";
+import FilterGifts from "../components/FilterGifts";
 import Footer from "../components/Footer";
+import TextFromGifts from '../components/TextFromGifts';
 
 export default function Gifts() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   return(
-    <div className="principal-div">
+    <div className="title-carousel">
       <h1 className="title">Dons</h1>
-      <Construction />
+      <TextFromGifts />
+      <FilterGifts />
       <Footer />
     </div>
   );

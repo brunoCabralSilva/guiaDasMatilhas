@@ -17,7 +17,7 @@ export default function Trybes() {
   }, []);
 
   return(
-    <div>
+    <div className="title-carousel">
       <h1 className="title">Tribos</h1>
       <Carousel
         list={ globalState.listOfTrybes }

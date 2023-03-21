@@ -17,7 +17,7 @@ export default function Auspices() {
   }, []);
 
   return(
-    <div>
+    <div className="title-carousel">
       <h1 className="title">Augúrios</h1>
       <Carousel
         list={ [...globalState.listOfAuspices, ...globalState.listOfAuspices] }

@@ -1,9 +1,11 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, EffectCoverflow } from 'swiper';
+import { useNavigate } from 'react-router-dom';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
 export default function Carousel({ list, dir }) {
+  const navigate = useNavigate();
   return(
     <Swiper
       breakpoints={{
@@ -40,6 +42,7 @@ export default function Carousel({ list, dir }) {
       {
         list && list.map((item, index) => (
           <SwiperSlide
+            onClick={ () => navigate(`/${dir}/${item.id}`) }
             key={ index }
             className="item-carousel"
           >

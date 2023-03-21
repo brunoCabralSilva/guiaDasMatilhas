@@ -1,15 +1,16 @@
-import { getAuspices, getBreeds, getTrybes } from "../../back/querys";
+import { getCollection } from "../../back/querys";
 
 export const queryDataValues = async (dispatch) => {
-    const trybes = await getTrybes();
-    const listOfBreeds = await getBreeds();
-    const auspices = await getAuspices();
+    const trybes = await getCollection("trybes");
+    const listOfBreeds = await getCollection("breeds");
+    const auspices = await getCollection("auspices");
     const listOfGifts = [];
 
     const listOfTrybes = trybes.map((trybe) => {
       const dataValue = {
         name: trybe.name,
         image: trybe.image1,
+        id: trybe.id,
       };
       return dataValue;
     });
@@ -18,6 +19,7 @@ export const queryDataValues = async (dispatch) => {
       const dataValue = {
         name: auspices.name,
         image: auspices.image1,
+        id: auspices.id,
       };
       return dataValue;
     })

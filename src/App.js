@@ -16,6 +16,7 @@ import GarouNordeste from './pages/GarouNordeste';
 import MatilhaDaKombi from './pages/MatilhaDaKombi';
 import Menu from './pages/Menu';
 import Rituals from './pages/Rituals';
+import Info from './pages/Info';
 
 export default function App() {
   return (
@@ -35,6 +36,7 @@ export default function App() {
         <Route path="/dons" element={<Gifts />} />
         <Route path="/garou-nordeste" element={<GarouNordeste />} />
         <Route path="/matilha-da-kombi" element={<MatilhaDaKombi />} />
+        <Route path="/:tipo/:id" element={<Info />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

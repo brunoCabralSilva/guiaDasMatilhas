@@ -21,7 +21,7 @@ export default function Breeds() {
       <h1 className="title">Raças</h1>
       <Carousel
         list={ [...globalState.listOfBreeds, ...globalState.listOfBreeds] }
-        dir="breeds"
+        dir="racas"
       />
       <Footer />
     </div>

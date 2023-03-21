@@ -21,7 +21,7 @@ export default function Trybes() {
       <h1 className="title">Tribos</h1>
       <Carousel
         list={ globalState.listOfTrybes }
-        dir="trybes"
+        dir="tribos"
       />
       <Footer />
     </div>

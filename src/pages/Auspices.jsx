@@ -21,7 +21,7 @@ export default function Auspices() {
       <h1 className="title">Augúrios</h1>
       <Carousel
         list={ [...globalState.listOfAuspices, ...globalState.listOfAuspices] }
-        dir="auspices"
+        dir="augurios"
       />
       <Footer />
     </div>

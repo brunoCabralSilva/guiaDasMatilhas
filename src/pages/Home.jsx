@@ -14,6 +14,7 @@ export default function Home() {
     if (globalState.listOfTrybes.length === 0) {
       queryDataValues(dispatch);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return(

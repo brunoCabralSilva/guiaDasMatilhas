@@ -55,6 +55,20 @@ li {
   list-style-type: none;
 }
 
+.search-button-gifts {
+  font-size: 1.1rem;
+  background-color: $pureBlack;
+  padding: 1rem 0;
+  width: 100%;
+  border: 1px solid transparent;
+  font-family: $andika;
+  color: $cleanWhite;
+  margin: 10px 0;
+}
+
+.search-button-gifts:hover {
+  border: 1px solid $cleanWhite;
+}
 
 @media screen and (max-width: 600px) {
   .text-gifts {

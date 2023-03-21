@@ -11,7 +11,17 @@ export default function Gifts() {
     <div className="title-carousel">
       <h1 className="title">Dons</h1>
       <TextFromGifts />
-      <FilterGifts />
+      <FilterGifts type="breeds" dir="racas" />
+      <FilterGifts type="trybes" dir="tribos" />
+      <FilterGifts type="auspices" dir="augurios" />
+      {/* <FilterGifts type="ranks" name="Postos" /> */}
+      {/* <FilterGifts type="books" name="Livros" /> */}
+      <button
+        className="search-button-gifts"
+        onClick=""
+      >
+        Realizar Busca
+      </button>
       <Footer />
     </div>
   );

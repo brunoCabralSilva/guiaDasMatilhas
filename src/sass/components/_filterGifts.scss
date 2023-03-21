@@ -1,0 +1,70 @@
+.filter-img {
+  width: 3rem;
+}
+
+.title-filter {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-family: $andika;
+  color: $cleanWhite;
+}
+
+.filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $blackOpacity8;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0;
+}
+
+.list-filters {
+  display: flex;
+}
+
+.hidden-filters {
+  display: none;
+}
+
+.grid-filters {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  gap: 10px;
+}
+
+.item-filter{
+  height: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-position: center;
+  padding: 0.5rem;
+  background-image: url('../../images/wallpapers/ceu_noturno.jpeg');
+  background-size: cover;
+
+  p {
+    font-family: $andika;
+    color: $cleanWhite;
+    font-size: 1.1rem;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+    line-height: 1.3rem;
+  }
+}
+
+.item-filter-not-selected {
+  background-image: url('../../images/wallpapers/ceu_noturno.jpeg');
+}
+
+.item-filter-selected{
+  background-image: url('../../images/wallpapers/moon.jpg');
+}
+
+.image-filter {
+  height: 80%;
+  object-fit: contain;
+}

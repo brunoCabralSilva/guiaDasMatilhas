@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 import { getCollection } from '../back/querys';
 import { actionFilBook, actionFilGenerics, actionFilRank } from '../redux/actions';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function FilterGifts({ type, dir }) {
   const [minimize, setMinimize] = useState(false);
   const [data, setData] = useState([]);
   const dispatch = useDispatch();
+  const globalState = useSelector((state) => state);
 
   useEffect(() => {
     const query = async () => {
@@ -58,6 +59,13 @@ export default function FilterGifts({ type, dir }) {
     }
   };
 
+  const returnSelectedClass = (item) => {
+    const list = [...globalState.filters.books, ...globalState.filters.generics, ...globalState.filters.ranks];
+    if (list.includes(item)) {
+      return 'item-filter-selected';
+    } return 'item-filter-not-selected';
+  };
+
   return(
     <section>
       <div
@@ -93,7 +101,7 @@ export default function FilterGifts({ type, dir }) {
               data.length > 0 && data.map((item, index) => (
                 <div
                   key={index}
-                  className="item-filter item-filter-not-selected"
+                  className={`item-filter ${returnSelectedClass(item.name.stringValue)}`}
                   onClick={ () => filterOptions(item.name.stringValue) }
                 >
                   {

@@ -1,0 +1,43 @@
+.data-gift{
+  margin: 0.5rem 0;
+}
+
+.gift-div {
+  font-family: $andika;
+  color: $cleanWhite;
+  background-color: $blackOpacity8;
+  margin-top: 0.75rem;
+  padding: 1.25rem;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.w-50 {
+  width: 49%;
+  margin-right: 1%;
+}
+
+.title-gift {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.img-arrow-gift {
+  height: 3rem;
+}
+
+.solid {
+  margin: 0.75rem 0;
+  width: 85%;
+  background-color: $cleanWhite;
+  color: $cleanWhite;
+}
+
+@media screen and (max-width: 700px) {
+  .w-50 {
+    width: 100%;
+  }
+}

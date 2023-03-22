@@ -94,6 +94,22 @@ li {
   border: 1px solid $cleanWhite;
 }
 
+.list-gifts {
+  display: flex;
+  flex-flow: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.result-gift-text{
+  color: $cleanWhite;
+  font-family: $andika;
+  font-size: 2rem;
+  background-color: $blackOpacity8;
+  margin-top: 0.75rem;
+  padding: 1.25rem;
+  text-align: center;
+}
+
 @media screen and (max-width: 600px) {
   .text-gifts {
     text-align: center;

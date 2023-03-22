@@ -44,3 +44,9 @@ export const actionFilBook = (item) => {
     payload: item,
   }
 }
+
+export const actionResetFilters = () => {
+  return {
+    type: "RESET_FILTERS",
+  }
+}

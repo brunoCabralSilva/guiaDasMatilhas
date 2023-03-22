@@ -77,6 +77,15 @@ const reducer = (state = INITIAL_STATE, action) => {
           books: [...state.filters.books, action.payload],
         },
       };
+      case "RESET_FILTERS":
+        return {
+          ...state,
+          filters: {
+            books: [],
+            generics: [],
+            ranks: [],
+          },
+        };
     default:
       return state;
   };

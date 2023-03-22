@@ -23,3 +23,24 @@ export const actionToken = (token) => {
     payload: token,
   }
 }
+
+export const actionFilGenerics = (item) => {
+  return {
+    type: "UPDATE_FILTER_GENERICS",
+    payload: item,
+  }
+}
+
+export const actionFilRank = (item) => {
+  return {
+    type: "UPDATE_FILTER_RANK",
+    payload: item,
+  }
+}
+
+export const actionFilBook = (item) => {
+  return {
+    type: "UPDATE_FILTER_BOOK",
+    payload: item,
+  }
+}

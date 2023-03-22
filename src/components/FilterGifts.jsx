@@ -1,9 +1,12 @@
 import { useEffect, useState } from 'react';
 import { getCollection } from '../back/querys';
+import { actionFilBook, actionFilGenerics, actionFilRank } from '../redux/actions';
+import { useDispatch } from 'react-redux';
 
 export default function FilterGifts({ type, dir }) {
   const [minimize, setMinimize] = useState(false);
   const [data, setData] = useState([]);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const query = async () => {
@@ -31,6 +34,16 @@ export default function FilterGifts({ type, dir }) {
     query();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const filterOptions = (item) => {
+    if(dir === "tribos" || dir === "racas" || dir === "augurios") {
+      dispatch(actionFilGenerics(item));
+    } else if (dir === "Postos") {
+      dispatch(actionFilRank(item));
+    } else {
+      dispatch(actionFilBook(item));
+    }
+  };
 
   const returnName = () => {
     switch(dir) {
@@ -78,12 +91,16 @@ export default function FilterGifts({ type, dir }) {
           <div className="grid-filters">
             {
               data.length > 0 && data.map((item, index) => (
-                <div key={index} className="item-filter item-filter-not-selected">
+                <div
+                  key={index}
+                  className="item-filter item-filter-not-selected"
+                  onClick={ () => filterOptions(item.name.stringValue) }
+                >
                   {
                   (dir === 'tribos' || dir === 'racas' || dir === 'augurios') && item.image ?
                    <img
                     src={require(`../images/${dir}/${ dir === 'tribos' ? item.image.arrayValue.values[3].stringValue : item.image.arrayValue.values[0].stringValue}`)}
-                    alt={data.name}
+                    alt={data.name && data.name.stringValue}
                     className="image-filter"
                     />
                     : ''  

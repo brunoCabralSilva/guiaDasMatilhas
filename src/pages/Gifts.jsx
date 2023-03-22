@@ -14,8 +14,8 @@ export default function Gifts() {
       <FilterGifts type="breeds" dir="racas" />
       <FilterGifts type="trybes" dir="tribos" />
       <FilterGifts type="auspices" dir="augurios" />
-      {/* <FilterGifts type="ranks" name="Postos" /> */}
-      {/* <FilterGifts type="books" name="Livros" /> */}
+      <FilterGifts type="ranks" dir="Postos" />
+      <FilterGifts type="books" dir="Livros" />
       <button
         className="search-button-gifts"
       >

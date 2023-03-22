@@ -7,8 +7,26 @@ export default function FilterGifts({ type, dir }) {
 
   useEffect(() => {
     const query = async () => {
-      const queryItems = await getCollection(type);
-      setData(queryItems);
+      if (dir === 'Postos') {
+        setData([
+          { name: { stringValue: 'Cliath' }, rank: 1},
+          { name: { stringValue: 'Fostern' }, rank: 2},
+          { name: { stringValue: 'Adren' }, rank: 3},
+          { name: { stringValue: 'Athro' }, rank: 4},
+          { name: { stringValue: 'Ancião' }, rank: 5}
+        ]);
+      } else if (dir === "Livros") {
+        const queryBooks = await getCollection('books');
+        const sortedList = queryBooks.sort(function (x, y) {
+          const a = x.name.stringValue;
+          const b = y.name.stringValue;
+          return a < b ? -1 : a > b ? 1 : 0;
+        });
+        setData(sortedList);
+      } else {
+        const queryItems = await getCollection(type);
+        setData(queryItems);
+      }
     };
     query();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -23,7 +41,7 @@ export default function FilterGifts({ type, dir }) {
       case 'augurios':
         return 'Augúrios';
       default:
-        return "Null";
+        return dir;
     }
   };
 
@@ -62,11 +80,13 @@ export default function FilterGifts({ type, dir }) {
               data.length > 0 && data.map((item, index) => (
                 <div key={index} className="item-filter item-filter-not-selected">
                   {
-                  item.image && <img
+                  (dir === 'tribos' || dir === 'racas' || dir === 'augurios') && item.image ?
+                   <img
                     src={require(`../images/${dir}/${ dir === 'tribos' ? item.image.arrayValue.values[3].stringValue : item.image.arrayValue.values[0].stringValue}`)}
                     alt={data.name}
                     className="image-filter"
-                  />
+                    />
+                    : ''  
                   }
                   <p>{ item.name && item.name.stringValue }</p>
                 </div>  

@@ -21,7 +21,9 @@ const reducer = (state = INITIAL_STATE, action) => {
     case "UPDATE_TOKEN":
       return {
         ...state,
-        token: action.payload,
+        token: action.payload.token,
+        user: action.payload.name,
+        role: action.payload.role,
       };
     case "UPDATE_FILTER_GENERICS":
       if (state.filters.generics.includes(action.payload)) {

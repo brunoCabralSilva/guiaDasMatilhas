@@ -5,7 +5,7 @@ import { login } from "../../back/login";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
-export default function Admin() {
+export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorAuth, setErrorAuth] = useState(false);
@@ -32,7 +32,7 @@ export default function Admin() {
   const loginUser = async () => {
     const logs = await login(email, password);
     if (logs) {
-      dispatch(actionToken(logs.token));
+      dispatch(actionToken(logs));
       navigate('/admin');
     } else {
       setErrorAuth(true);
@@ -78,7 +78,7 @@ export default function Admin() {
           <button
             className={`${enableButton() ? 'admin-button-disabled' : 'admin-button-enable'} admin-button` }
             id="btn-login"
-            onkeypress={"loginUser()"}
+            onKeyPress={loginUser}
             disabled={ enableButton() }
             onClick={ loginUser }
           >

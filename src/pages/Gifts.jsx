@@ -17,10 +17,24 @@ export default function Gifts() {
     dispatch(actionResetFilters());
   };
 
+  const analizeAdm = () => {
+    if (globalState.token.length > 10 && globalState.role === 'administrator') {
+      return (
+        <button
+          className="admin-button"
+          // onClick={ () => setMinimize(!minimize) }
+          >
+          <h2 className="admin-button-title">Administrar Dons</h2>
+        </button>
+      );
+    } else return '';
+  };
+
   return(
     <div className="title-carousel">
       <h1 className="title">Dons</h1>
       <TextFromGifts />
+      { analizeAdm() }
       <FilterGifts type="breeds" dir="racas" />
       <FilterGifts type="trybes" dir="tribos" />
       <FilterGifts type="auspices" dir="augurios" />

@@ -20,13 +20,26 @@ export default function FilterGifts({ type, dir }) {
           { name: { stringValue: 'Ancião' }, rank: 5}
         ]);
       } else if (dir === "Livros") {
-        const queryBooks = await getCollection('books');
-        const sortedList = queryBooks.sort(function (x, y) {
+        const listOfGifts = await getCollection('gifts');
+        const queryBooks = [];
+        for (let j = 0; j < listOfGifts.length; j += 1) {
+          for (let i = 0; i < listOfGifts[j].font.arrayValue.values.length; i += 1) {
+            if (queryBooks.includes(listOfGifts[j].font.arrayValue.values[i].stringValue)) {
+
+            } else {
+              queryBooks.push(listOfGifts[j].font.arrayValue.values[i].stringValue);
+            }
+          }
+        }
+
+        const queryBooksFormat = queryBooks.map((item) => ({ name: { stringValue: item }})).sort(function (x, y) {
           const a = x.name.stringValue;
           const b = y.name.stringValue;
           return a < b ? -1 : a > b ? 1 : 0;
         });
-        setData(sortedList);
+
+        setData(queryBooksFormat);
+
       } else {
         const queryItems = await getCollection(type);
         setData(queryItems);
@@ -38,11 +51,12 @@ export default function FilterGifts({ type, dir }) {
 
   const filterOptions = (item) => {
     if(dir === "tribos" || dir === "racas" || dir === "augurios") {
-      dispatch(actionFilGenerics(item));
+      dispatch(actionFilGenerics(item.name.stringValue));
     } else if (dir === "Postos") {
-      dispatch(actionFilRank(item));
+      console.log(item.rank);
+      dispatch(actionFilRank(item.rank));
     } else {
-      dispatch(actionFilBook(item));
+      dispatch(actionFilBook(item.name.stringValue));
     }
   };
 
@@ -102,7 +116,7 @@ export default function FilterGifts({ type, dir }) {
                 <div
                   key={index}
                   className={`item-filter ${returnSelectedClass(item.name.stringValue)}`}
-                  onClick={ () => filterOptions(item.name.stringValue) }
+                  onClick={ () => filterOptions(item) }
                 >
                   {
                   (dir === 'tribos' || dir === 'racas' || dir === 'augurios') && item.image ?
@@ -120,6 +134,9 @@ export default function FilterGifts({ type, dir }) {
           </div>
         </div>
       </div>
+      {
+        // console.log(globalState)
+      }
     </section>
   );
 }

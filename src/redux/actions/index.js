@@ -50,3 +50,10 @@ export const actionResetFilters = () => {
     type: "RESET_FILTERS",
   }
 }
+
+export const actionListGifts = (list) => {
+  return {
+    type: "INSERT_LIST_GIFTS",
+    payload: list,
+  }
+}

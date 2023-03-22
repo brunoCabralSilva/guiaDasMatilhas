@@ -110,8 +110,8 @@ export default function Info() {
             </div>
             <div className="info-description">
               { 
-                data.description && data.description.arrayValue.values.map((desc) => (
-                  <p>{ desc.stringValue }</p>
+                data.description && data.description.arrayValue.values.map((desc, index) => (
+                  <p key={index}>{ desc.stringValue }</p>
                 ))
               }
               <div>

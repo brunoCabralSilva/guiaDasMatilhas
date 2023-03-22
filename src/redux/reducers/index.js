@@ -79,15 +79,20 @@ const reducer = (state = INITIAL_STATE, action) => {
           books: [...state.filters.books, action.payload],
         },
       };
-      case "RESET_FILTERS":
-        return {
-          ...state,
-          filters: {
-            books: [],
-            generics: [],
-            ranks: [],
-          },
-        };
+    case "RESET_FILTERS":
+      return {
+        ...state,
+        filters: {
+          books: [],
+          generics: [],
+          ranks: [],
+        },
+      };
+    case "INSERT_LIST_GIFTS":
+      return {
+        ...state,
+        listOfGifts: action.payload,
+      }
     default:
       return state;
   };

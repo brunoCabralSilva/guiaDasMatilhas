@@ -3,7 +3,7 @@ import FilterGifts from "../components/FilterGifts";
 import Footer from "../components/Footer";
 import TextFromGifts from '../components/TextFromGifts';
 import { useDispatch, useSelector } from 'react-redux';
-import { actionResetFilters } from "../redux/actions";
+import { actionListGifts, actionResetFilters } from "../redux/actions";
 import { getCollection } from "../back/querys";
 import Gift from "../components/Gift";
 
@@ -14,21 +14,67 @@ export default function Gifts() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    const insertGifts = async () => {
+      const listOfGifts = await getCollection('gifts');
+      dispatch(actionListGifts(listOfGifts));
+    }
+    insertGifts();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const searchGifts = async () => {
-    const listBooks = globalState.filters.books.length === 0;
+    const listOfGifts = globalState.listOfGifts;
     const listGenerics = globalState.filters.generics.length === 0;
+    const listBooks = globalState.filters.books.length === 0;
     const listRanks = globalState.filters.ranks.length === 0;
 
+    let filteredGenerics = [];
 
-
-    if (listBooks && listGenerics && listRanks) {
-      const listOfGifts = await getCollection('gifts');
-      setListGifts(listOfGifts);
+    if(!listGenerics) {
+      for (let i = 0; i < globalState.filters.generics.length; i += 1) {
+        for (let j = 0; j < listOfGifts.length; j += 1) {
+          for (let k = 0; k < listOfGifts[j].belong.arrayValue.values.length; k += 1) {
+            if(listOfGifts[j].belong.arrayValue.values[k].stringValue === globalState.filters.generics[i]) {
+              filteredGenerics.push(listOfGifts[j]);
+            }
+          }
+        }
+      }
+    } else {
+      filteredGenerics = globalState.listOfGifts;
     }
 
+    let filteredRanks = [];
+
+    if(!listRanks) {
+      for (let i = 0; i < globalState.filters.ranks.length; i += 1) {
+        for (let j = 0; j < filteredGenerics.length; j += 1) {
+          if(Number(filteredGenerics[j].rank.integerValue) === Number(globalState.filters.ranks[i])) {
+            filteredRanks.push(filteredGenerics[j]);
+          }
+        }
+      }
+    } else {
+      filteredRanks = filteredGenerics;
+    }
+
+    let filteredBooks = [];
+
+    if (!listBooks) {
+      for (let i = 0; i < globalState.filters.books.length; i += 1) {
+        for (let j = 0; j < filteredRanks.length; j += 1) {
+          for (let k = 0; k < filteredRanks[j].font.arrayValue.values.length; k += 1) {
+            if(filteredRanks[j].font.arrayValue.values[k].stringValue === globalState.filters.books[i]) {
+              filteredBooks.push(filteredRanks[j]);
+            }
+          }
+        }
+      }
+    } else {
+      filteredBooks = filteredRanks;
+    }
+
+    setListGifts(filteredBooks);
     dispatch(actionResetFilters());
   };
 
@@ -85,13 +131,11 @@ export default function Gifts() {
         { returnMessageResult() }
         <div className="list-gifts">
         {
-          listGifts.length > 0 && listGifts.map((item) => (
-            <Gift item={item} />
+          listGifts.length > 0 && listGifts.map((item, index) => (
+            <Gift item={ item } key={ index } />
           ))
         }
         </div>
-        { 
-        console.log(listGifts) }
       </div>
       <Footer />
     </div>

@@ -10,7 +10,7 @@ import NotFound from './pages/NotFound';
 import Navigation from './components/Navigation';
 import Blog from './pages/Blog';
 import Gifts from './pages/Gifts';
-import Login from './pages/admin/Login';
+import Login from './pages/Login';
 import Friends from './pages/Friends';
 import GarouNordeste from './pages/GarouNordeste';
 import MatilhaDaKombi from './pages/MatilhaDaKombi';

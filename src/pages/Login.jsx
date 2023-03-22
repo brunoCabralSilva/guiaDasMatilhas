@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import Footer from "../../components/Footer";
-import { actionToken } from '../../redux/actions/index';
-import { login } from "../../back/login";
+import Footer from "../components/Footer";
+import { actionToken } from '../redux/actions/index';
+import { login } from "../back/login";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -46,7 +46,7 @@ export default function Login() {
     <div className="principal-div">
       <section className="section-login">
         <img
-          src={require("../../images/logos/wolf.png")}
+          src={require("../images/logos/wolf.png")}
           alt="icone de lobo"
           className="login-image"
         />

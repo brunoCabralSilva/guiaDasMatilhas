@@ -1,0 +1,17 @@
+.div-profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $cleanWhite;
+  background-image: linear-gradient(to right, $blackOpacity8, $blackOpacity2);
+  margin: 1.5vh 0;
+  height: 77vh;
+  font-family: $andika;
+}
+
+.title-description {
+  font-size: 2.5vh;
+  font-weight: 600;
+  padding: 1vh;
+}

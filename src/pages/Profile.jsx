@@ -19,22 +19,21 @@ export default function Profile() {
   return(
     <section>
       <Navigation />
-      <div className="principal-div">
+      <div className="title-carousel">
         <h1 className="title">Profile</h1>
-        <div>
+        <div className="div-profile">
           <p>
-            <span>E-mail:</span>
+            <span className="title-description">E-mail:</span>
             <span>{ globalState.user && globalState.user.email }</span>
           </p>
           <p>
-            <span>Usuário:</span>
+            <span className="title-description">Usuário:</span>
             {
               globalState.user && 
               `${globalState.user.firstName} ${globalState.user.lastName}`
             }
           </p>
         </div>
-        <Construction />
       </div>
       <Footer />
     </section>

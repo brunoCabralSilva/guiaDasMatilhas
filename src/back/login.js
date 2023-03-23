@@ -32,3 +32,14 @@ export const login = async (email, password) => {
     token: Math.random().toString(36),
   };
 }
+
+export const verifyEmail = async (email) => {
+  const getData = query(collection(db, "users"), where("email", "==", email));
+  
+  const querySnapshot = await getDocs(getData);
+
+  if (querySnapshot._docs && querySnapshot._docs.length > 0) {
+    return true
+  }
+  return false;
+}

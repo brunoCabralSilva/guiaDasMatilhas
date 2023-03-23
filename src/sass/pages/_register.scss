@@ -1,0 +1,30 @@
+.section-login-register {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-input-register {
+  padding: 1.2vh 0 1.2vh 0;
+  font-size: 2.5vh;
+  text-align: center;
+  width: 100%;
+  font-family: $andika;
+}
+
+.space-between {
+  height: 3vh;
+}
+
+.error-message-register {
+color: $cleanWhite;
+font-family: $andika;
+font-weight: 600;
+margin: 0.5vh 0 3vh 0;
+line-height: 3vh;
+
+width: 100%;
+text-align: center;
+}

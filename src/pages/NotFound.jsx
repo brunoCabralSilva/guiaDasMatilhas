@@ -11,7 +11,7 @@ export default function NotFound() {
       <Navigation />
       <div className="not-found">
         <p>Not Found</p>
-        <img src={require("../images/logos/sad.png")} alt="sad wolf" />
+        <img src={require("../images/logos/sad.png")} alt="sad wolf" className="sad-wolf" />
       </div>
       <Footer />
     </section>

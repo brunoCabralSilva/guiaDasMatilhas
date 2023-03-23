@@ -16,7 +16,7 @@ export default function Login() {
   useEffect(() => {
     window.scrollTo(0, 0);
     if (globalState.token !== '') {
-      navigate('/home');
+      navigate('/login');
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -43,54 +43,63 @@ export default function Login() {
   };
 
   return(
-    <div className="principal-div">
-      <section className="section-login">
-        <img
-          src={require("../images/logos/wolf.png")}
-          alt="icone de lobo"
-          className="login-image"
-        />
-        <h1 className="title-page-login">
-          Guia das Matilhas
-        </h1>
-        <div className="div-login">
-          <input
-            className="admin-input"
-            value={email}
-            placeholder="E-mail"
-            onChange={ (e) => setEmail(e.target.value) }
-            type="email"
+    <section>
+      <div className="principal-div">
+        <section className="section-login">
+          <img
+            src={require("../images/logos/wolf.png")}
+            alt="icone de lobo"
+            className="login-image"
           />
-          <input
-            className="admin-input"
-            placeholder="Password"
-            value={password}
-            onChange={ (e) => setPassword(e.target.value) }
-            type="password"
-          />
-          {
-            document.addEventListener('keydown', function(e) {
-              if(e.key === "Enter"){
-                document.getElementById("btn-login").click();
-              }
-            })
+          <h1 className="title-page-login">
+            Guia das Matilhas
+          </h1>
+          <div className="div-login">
+            <input
+              className="admin-input"
+              value={email}
+              placeholder="E-mail"
+              onChange={ (e) => setEmail(e.target.value) }
+              type="email"
+            />
+            <input
+              className="admin-input"
+              placeholder="Password"
+              value={password}
+              onChange={ (e) => setPassword(e.target.value) }
+              type="password"
+            />
+            {
+              document.addEventListener('keydown', function(e) {
+                if(e.key === "Enter"){
+                  document.getElementById("btn-login").click();
+                }
+              })
+            }
+            <button
+              className={`${enableButton() ? 'admin-button-disabled' : 'admin-button-enable'} admin-button` }
+              id="btn-login"
+              onKeyPress={loginUser}
+              disabled={ enableButton() }
+              onClick={ loginUser }
+            >
+              Login
+            </button>
+            <button
+              className="admin-button-enable admin-button"
+              id="btn-register"
+              onClick={ () => navigate('/register') }
+            >
+              Registre-se
+            </button>
+          </div>
+          { errorAuth 
+              ? <div className="error-message">Email ou senha incorretos</div>
+              : <div className="error-message" /> 
           }
-          <button
-            className={`${enableButton() ? 'admin-button-disabled' : 'admin-button-enable'} admin-button` }
-            id="btn-login"
-            onKeyPress={loginUser}
-            disabled={ enableButton() }
-            onClick={ loginUser }
-          >
-            Login
-          </button>
-        </div>
-        { errorAuth 
-            ? <div className="error-message">Email ou senha incorretos</div>
-            : <div className="error-message" /> 
-        }
-      </section>
+        </section>
+      </div>
       <Footer />
-    </div>
+    </section>
   );
 }

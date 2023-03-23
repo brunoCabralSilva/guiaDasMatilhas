@@ -51,6 +51,12 @@ export const actionResetFilters = () => {
   }
 }
 
+export const actionLogout = () => {
+  return {
+    type: "RESET_FILTERS",
+  }
+}
+
 export const actionListGifts = (list) => {
   return {
     type: "INSERT_LIST_GIFTS",

@@ -16,6 +16,7 @@ import MatilhaDaKombi from './pages/MatilhaDaKombi';
 import Menu from './pages/Menu';
 import Rituals from './pages/Rituals';
 import Info from './pages/Info';
+import Register from './pages/Register';
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
         <Route path="/" element={<Navigate replace to='/login' />} />
         <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/menu" element={ <Menu /> } />
         <Route path="/about" element={<About />} />
         <Route path="/trybes" element={<Trybes />} />

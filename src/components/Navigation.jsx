@@ -1,10 +1,13 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { actionLogout } from '../redux/actions';
+import { useDispatch } from 'react-redux';
 
 export default function Navigation() {
   const [showMenu, setShowMenu] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   return(
     <header>
@@ -16,9 +19,12 @@ export default function Navigation() {
         <Link className="item-menu" to='/about'> Sobre </Link>
         <button
           className="button-login-nav"
-          onClick={ () => navigate('/login') }
+          onClick={ () => {
+            dispatch(actionLogout())
+            navigate('/login'); 
+          }}
         >
-          Login
+          Sair
         </button>
       </nav>
       <div
@@ -67,9 +73,13 @@ export default function Navigation() {
             Sobre
           </Link>
           <Link
-            to="/login"
+            to="/"
             className="item-menu item-login"
-            onClick={() => setShowMenu(!showMenu)}
+            onClick={() => {
+              dispatch(actionLogout())
+              navigate('/login'); 
+              setShowMenu(!showMenu)}
+            }
           >
             Sair
           </Link>

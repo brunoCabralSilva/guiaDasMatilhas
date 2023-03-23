@@ -4,6 +4,8 @@ const INITIAL_STATE = {
   listOfAuspices: [],
   listOfGifts: [],
   token: '',
+  user: '',
+  role:'',
   filters: {
     books: [],
     generics: [],
@@ -92,6 +94,22 @@ const reducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         listOfGifts: action.payload,
+      };
+    case "LOGOUT":
+      console.log('estado:, ', state);
+      return { 
+        listOfTrybes: [],
+        listOfBreeds: [],
+        listOfAuspices: [],
+        listOfGifts: [],
+        token: '',
+        user: '',
+        role:'',
+        filters: {
+          books: [],
+          generics: [],
+          ranks: [],
+        },
       }
     default:
       return state;

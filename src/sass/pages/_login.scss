@@ -47,6 +47,10 @@
   font-family: $andika;
 }
 
+.admin-input-error {
+  border: 1px red solid;
+}
+
 .admin-button {
   padding: 1.2vh;
   font-size: 2.5vh;
@@ -61,22 +65,27 @@
   font-weight: 800;
 }
 
+#btn-register {
+  margin-top: 3vh;
+  background-color: $blueBackground;
+}
+
 .admin-button-disabled {
   background-color: $grayColor;
 }
 
 .admin-button-disabled:hover {
-  transition: color 1.5s;
+  transition: background-color 1.5s;
   background-color: $grayDarkColor;
 }
 
 .admin-button-enable {
-  background-color: $blackOpacity8;
+  background-color: $blueBackground;
 }
 
-.admin-button-enable:hover {
-  transition: color 1.5s;
-  background-color: $redColor;
+.admin-button-enable:hover, #btn-register:hover {
+  transition: background-color 1.5s;
+  background-color: $redColorLight;
 }
 
 

@@ -12,11 +12,14 @@ export default function Home() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    if (globalState.user.token === '') navigate('/login');
     if (globalState.listOfTrybes.length === 0) {
       queryDataValues(dispatch);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  console.log(globalState);
 
   return(
     <section>

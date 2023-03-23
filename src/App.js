@@ -17,6 +17,7 @@ import Menu from './pages/Menu';
 import Rituals from './pages/Rituals';
 import Info from './pages/Info';
 import Register from './pages/Register';
+import Profile from './pages/Profile';
 
 export default function App() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/menu" element={ <Menu /> } />
         <Route path="/about" element={<About />} />
         <Route path="/trybes" element={<Trybes />} />

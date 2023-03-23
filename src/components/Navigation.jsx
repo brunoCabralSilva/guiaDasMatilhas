@@ -17,6 +17,7 @@ export default function Navigation() {
         <Link className="item-menu" to='/auspices'> Augúrios </Link>
         <Link className="item-menu" to='/breeds'> Raças </Link>
         <Link className="item-menu" to='/about'> Sobre </Link>
+        <Link className="item-menu" to='/profile'> Perfil </Link>
         <button
           className="button-login-nav"
           onClick={ () => {
@@ -71,6 +72,13 @@ export default function Navigation() {
             onClick={() => setShowMenu(!showMenu)}
           >
             Sobre
+          </Link>
+          <Link
+            to="/profile"
+            className="item-menu"
+            onClick={() => setShowMenu(!showMenu)}
+          >
+            Perfil
           </Link>
           <Link
             to="/"

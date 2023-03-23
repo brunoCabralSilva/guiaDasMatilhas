@@ -1,6 +1,6 @@
 import md5 from 'md5';
 import { getFirestore, collection, query, where, getDocs } from 'firebase/firestore/lite';
-import firebaseConfig from '../back/connection';
+import firebaseConfig from './connection';
 
 const db = getFirestore(firebaseConfig);
 
@@ -12,7 +12,8 @@ export const getUser = async (email, password) => {
   if (querySnapshot._docs && querySnapshot._docs.length > 0) {
     return { 
       email: querySnapshot._docs[0]._document.data.value.mapValue.fields.email.stringValue,
-      name: querySnapshot._docs[0]._document.data.value.mapValue.fields.name.stringValue,
+      firstName: querySnapshot._docs[0]._document.data.value.mapValue.fields.firstName.stringValue,
+      lastName: querySnapshot._docs[0]._document.data.value.mapValue.fields.lastName.stringValue,
       role: querySnapshot._docs[0]._document.data.value.mapValue.fields.role.stringValue,
     }
   }
@@ -24,9 +25,9 @@ export const login = async (email, password) => {
   const response = await getUser(email, encryptedPass);
   
   if (!response) return null;
-  
   return {
-    name: response.name,
+    firstName: response.firstName,
+    lastName: response.lastName,
     email: response.email,
     role: response.role,
     token: Math.random().toString(36),

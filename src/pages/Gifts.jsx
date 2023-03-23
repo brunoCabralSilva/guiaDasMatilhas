@@ -7,14 +7,17 @@ import { actionListGifts, actionResetFilters } from "../redux/actions";
 import { getCollection } from "../back/querys";
 import Gift from "../components/Gift";
 import Navigation from "../components/Navigation";
+import { useNavigate } from 'react-router-dom';
 
 export default function Gifts() {
   const [listGifts, setListGifts] = useState([]);
   const globalState = useSelector((state) => state);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    if (globalState.user.token === '') navigate('/login');
     const insertGifts = async () => {
       const listOfGifts = await getCollection('gifts');
       dispatch(actionListGifts(listOfGifts));

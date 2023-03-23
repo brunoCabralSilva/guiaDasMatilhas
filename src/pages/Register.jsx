@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import Footer from "../components/Footer";
-// import { actionToken } from '../redux/actions/index';
+import { actionToken } from '../redux/actions/index';
 import { login, verifyEmail } from "../back/login";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { registerUser } from "../back/register";
 
 export default function Register() {
   const [firstName, setFirstName] = useState('');
@@ -16,66 +17,62 @@ export default function Register() {
   const [erEmail, setErEmail] = useState('');
   const [erRPassword, setErRPassword] = useState('');
   const [erPassword, setErPassword] = useState('');
-  // const [errorAuth, setErrorAuth] = useState(false);
   const navigate = useNavigate();
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const globalState = useSelector((state) => state);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    if (globalState.token !== '') {
-      navigate('/login');
-    }
+    if (globalState.user.token === '') navigate('/login');
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const registerUser = async () => {
+  const validateData = async () => {
     const logs = await verifyEmail(email);
-    
-    if(firstName.length < 3) {
-      setErFirstName("Necessário inserir um nome com pelo menos três caracteres");
-    } else {
-      setErFirstName('');
-    }
-    
-    if(secName.length < 3) {
-      setErSecName("Necessário inserir um nome com pelo menos três caracteres");
-    } else {
-      setErSecName('');
-    }
-    
+    const vFirstName = firstName.length < 3;
+    const vSecName = secName.length < 3;
+    const validateEmail = /\S+@\S+\.\S+/;
+    const vEmail = !email || !validateEmail.test(email) || email === '';
+    const vEqPassword = password !== repeatPassword;
+    const vPassword = password.length < 6;
+    const vRPassword = password.length < 6;
+
+    if(vFirstName) setErFirstName('Necessário inserir um nome com pelo menos três caracteres');
+    else setErFirstName('');
+
+    if(vSecName) setErSecName('Necessário inserir um nome com pelo menos três caracteres');
+    else setErSecName('');
+
     if (logs) {
-      setErEmail("Email já cadastrado na base de dados");
+      setErEmail('Email já cadastrado na base de dados');
     } else {
-      const validateEmail = /\S+@\S+\.\S+/;
-      const vEmail = !email || !validateEmail.test(email) || email === '';
-      if (vEmail) {
-        setErEmail("Necessário inserir um E-mail válido");
-      } else {
-        setErEmail('');
-      }
+      if (vEmail) setErEmail("Necessário inserir um E-mail válido");
+      else setErEmail('');
     }
 
-    if (password !== repeatPassword) {
-      console.log('iguais')
-      setErPassword("Senhas inseridas não são semelhantes");
-      setErRPassword("Senhas inseridas não são semelhantes");
+    if (vEqPassword) {
+      setErPassword('Senhas inseridas não são semelhantes');
+      setErRPassword('Senhas inseridas não são semelhantes');
     } else {
-      if (password.length < 6) {
-        setErPassword("Necessário inserir uma senha com pelo menos 6 caracteres");
-      } else {
-        setErPassword("");
-      }
+      if (vPassword) setErPassword("Necessário inserir uma senha com pelo menos 6 caracteres");
+      else setErPassword('');
   
-      if (password.length < 6) {
-        setErRPassword("Necessário inserir uma senha com pelo menos 6 caracteres");
-      } else {
-        setErRPassword("");
-      }
+      if (vRPassword) setErRPassword("Necessário inserir uma senha com pelo menos 6 caracteres");
+      else setErRPassword('');
     }
-    // dispatch(actionToken(logs));
-    // navigate('/home');
+
+    return !(vFirstName || vSecName || vEmail || vEqPassword || vPassword ||vRPassword);
   };
+
+  const register = async () => {
+    const validation = await validateData();
+    if (validation) {
+      await registerUser(email, firstName, secName, password);
+      const logs = await login(email, password);
+      dispatch(actionToken(logs));
+      navigate('/home');
+    }
+  }
 
   const errorMessage = (message) => {
     if (message !== '') {
@@ -139,8 +136,8 @@ export default function Register() {
             <button
               className="admin-button-enable admin-button"
               id="btn-login-register"
-              onKeyPress={ registerUser }
-              onClick={ registerUser }
+              onKeyPress={ register }
+              onClick={ register }
               >
               Registrar
             </button>

@@ -2,11 +2,16 @@ import Footer from "../components/Footer";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import Navigation from "../components/Navigation";
+import { useSelector } from "react-redux";
 
 export default function Menu() {
   const navigate = useNavigate();
+  const globalState = useSelector((state) => state);
+
   useEffect(() => {
     window.scrollTo(0, 0);
+    if (globalState.user.token === '') navigate('/login');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const list = [

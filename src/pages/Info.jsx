@@ -3,13 +3,18 @@ import Footer from "../components/Footer";
 import { useParams } from "react-router-dom";
 import { getById } from "../back/querys";
 import Navigation from "../components/Navigation";
+import { useSelector } from "react-redux";
+import { useNavigate } from 'react-router-dom';
 
 export default function Info() {
   const [data, setData] = useState({});
   const params = useParams();
+  const globalState = useSelector((state) => state);
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    if (globalState.user.token === '') navigate('/login');
     const getCollection = async () => {
       const { tipo, id } = params;
       const query = await getById(tipo, id);

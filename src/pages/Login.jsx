@@ -9,15 +9,13 @@ export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorAuth, setErrorAuth] = useState(false);
+  const globalState = useSelector((state) => state);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const globalState = useSelector((state) => state);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    if (globalState.token !== '') {
-      navigate('/login');
-    }
+    if (globalState.user.token !== '') navigate('/home');
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

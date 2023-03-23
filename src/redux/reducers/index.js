@@ -3,9 +3,13 @@ const INITIAL_STATE = {
   listOfBreeds: [],
   listOfAuspices: [],
   listOfGifts: [],
-  token: '',
-  user: '',
-  role:'',
+  user: {
+    token: '',
+    firstName: '',
+    lastName: '',
+    role: '',
+    email: '',
+  },
   filters: {
     books: [],
     generics: [],
@@ -23,9 +27,13 @@ const reducer = (state = INITIAL_STATE, action) => {
     case "UPDATE_TOKEN":
       return {
         ...state,
-        token: action.payload.token,
-        user: action.payload.name,
-        role: action.payload.role,
+        user: {
+          token: action.payload.token,
+          firstName: action.payload.firstName,
+          lastName: action.payload.lastName,
+          role: action.payload.role,
+          email: action.payload.email,
+        }
       };
     case "UPDATE_FILTER_GENERICS":
       if (state.filters.generics.includes(action.payload)) {

@@ -1,6 +1,7 @@
 import Footer from "../components/Footer";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import Navigation from "../components/Navigation";
 
 export default function Menu() {
   const navigate = useNavigate();
@@ -43,6 +44,7 @@ export default function Menu() {
 
   return(
     <section>
+      <Navigation />
       <div className="menu">
         <div
           className="menu-presentation"
@@ -55,10 +57,10 @@ export default function Menu() {
             onClick={ () => navigate('/') }
           />
           <div className="menu-text-presentation">
-            <h3 className="z-20 sm:text-3xl font-bold">
+            <h3 className="">
               "Que Gaia tenha piedade de nós!"
             </h3>
-            <h4 className="z-20 text-right pt-1 text-base sm:text-xl sm:font-bold">- Lobisomem: O Apocalipse (Ed. Revisada)</h4>
+            <h4 className="">- Lobisomem: O Apocalipse (Ed. Revisada)</h4>
           </div>
         </div>
         <div className="menu-presentation-mobile">

@@ -20,17 +20,17 @@
   // sm:text-center
   font-family: $andika;
   color: $cleanWhite;
-  padding: 20px 20px 0 20px;
+  padding: 3vh 3vh 0 3vh;
 }
 
 .text-2 {
-  padding-bottom: 20px;
+  padding-bottom: 3vh;
 }
 
 .text-title {
-  padding: 1rem 1rem 0 1rem ;
-  font-size: 1.5rem;
-  line-height: 2rem;
+  padding: 3vh 3vh 0 3vh ;
+  font-size: 4vh;
+  line-height: 5vh;
   position: relative;
   text-align: left;
   font-weight: 600;
@@ -43,49 +43,52 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0.75rem 0 0 0;
+  margin: 1.5vh 0 0 0;
+  font-size: 2.3vh;
 }
 
 .div-img-text:nth-child(1) {
-  margin: 0.75rem 0;
+  margin: 1.5vh 0;
 }
 
 li {
-  padding-bottom: 20px;
+  padding-bottom: 3vh;
   list-style-type: none;
 }
 
 .search-button-gifts {
-  font-size: 1.1rem;
+  font-size: 2.3vh;
   background-color: $pureBlack;
-  padding: 1rem 0;
+  padding: 3vh 0;
   width: 100%;
   border: 1px solid transparent;
   font-family: $andika;
   color: $cleanWhite;
-  margin: 10px 0;
+  margin: 1.5vh 0;
   cursor: pointer;
 }
 
-.admin-button {
+.admin-button-gift {
   display: flex;
+  width: 100%;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   background-color: $cleanWhite;
-  padding: 0.7rem 1rem;
-  margin: 0.5rem 0;
+  padding: 1.5vh 3vh;
+  margin: 1.2vh 0;
   border: 1px solid $pureBlack;
   transition: background-color 2s;
+  cursor: pointer;
 }
 
-.admin-button:hover {
+.admin-button-gift:hover {
   background-color: $whiteOpacity6;
 }
 
 .admin-button-title {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+  font-size: 3vh;
+  line-height: 4vh;
   font-family: $andika;
   color: $pureBlack;
 }
@@ -97,16 +100,16 @@ li {
 .list-gifts {
   display: flex;
   flex-flow: wrap;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.5vh;
 }
 
 .result-gift-text{
   color: $cleanWhite;
   font-family: $andika;
-  font-size: 2rem;
+  font-size: 4vh;
   background-color: $blackOpacity8;
-  margin-top: 0.75rem;
-  padding: 1.25rem;
+  margin-top: 1.5vh;
+  padding: 3vh;
   text-align: center;
 }
 

@@ -6,6 +6,7 @@
   width: 100%;
   height: 10vh;
   z-index: 1;
+  font-size: 2.5vh;
 }
 
 .mobile {
@@ -15,7 +16,7 @@
 .item-menu {
   color: $cleanWhite;
   font-family: $andika;
-  padding: 0 20px 0 20px;
+  padding: 0 3vh 0 3vh;
   text-decoration: none;
   transition: all 1s;
 }
@@ -27,8 +28,8 @@
 
 .button-login-nav {
   position: absolute;
-  right: 10px;
-  padding: 5px 10px;
+  right: 1.5vh;
+  padding: 0.75vh 1.5vh;
   font-family: $andika;
   font-weight: 600;
   background-color: $darkBlue;
@@ -70,7 +71,7 @@
 
   .item {
     height: 3px;
-    width: 25px;
+    width: 3.2vh;
     margin-bottom: 4px;
     background-color: $cleanWhite;
     transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
@@ -114,16 +115,16 @@
 
   .button-menu {
     position: fixed;
-    right: 15px;
-    top: 15px;
+    right: 2.25vh;
+    top: 2.25vh;
   }
 
   .item-menu {
-    padding: 20px 0 0 0;
+    padding: 3vh 0 0 0;
     font-weight: 600;
   }
 
   .item-login {
-    padding-top: 80px;
+    padding-top: 12vh;
   }
 }

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Footer from "../components/Footer";
 import { useParams } from "react-router-dom";
 import { getById } from "../back/querys";
+import Navigation from "../components/Navigation";
 
 export default function Info() {
   const [data, setData] = useState({});
@@ -97,42 +98,45 @@ export default function Info() {
   };
 
   return(
-    <div className="title-carousel">
-      <div className="info-element">
-        <div className="info-data">
-          <h1 className="title-info">
-            { data.name && data.name.stringValue }
-          </h1>
-          <div className="data-specific">
-            { returnDataByType() }
-            <div className="presentation-img">
-              { data.image && returnInitialImage() }
-            </div>
-            <div className="info-description">
-              { 
-                data.description && data.description.arrayValue.values.map((desc, index) => (
-                  <p key={index}>{ desc.stringValue }</p>
-                ))
+    <section>
+      <div className="title-carousel">
+        <Navigation />
+        <div className="info-element">
+          <div className="info-data">
+            <h1 className="title">
+              { data.name && data.name.stringValue }
+            </h1>
+            <div className="data-specific">
+              { returnDataByType() }
+              <div className="presentation-img">
+                { data.image && returnInitialImage() }
+              </div>
+              <div className="info-description">
+                { 
+                  data.description && data.description.arrayValue.values.map((desc, index) => (
+                    <p key={index}>{ desc.stringValue }</p>
+                  ))
+                }
+                <div>
+                  <span className="font-text">Fonte:</span>
+                  { returnFont() }
+                </div>
+              </div>
+              {
+                data.image && params.tipo === "tribos" &&
+                <div className="data-div-img">
+                  <img
+                    src={require(`../images/${params.tipo}/${data.image.arrayValue.values[3].stringValue}`)}
+                    className="info-image-glifo"
+                    alt={data.name}
+                  />
+                </div>
               }
-              <div>
-                <span className="font-text">Fonte:</span>
-                { returnFont() }
-              </div>
             </div>
-            {
-              data.image && params.tipo === "tribos" &&
-              <div className="data-div-img">
-                <img
-                  src={require(`../images/${params.tipo}/${data.image.arrayValue.values[3].stringValue}`)}
-                  className="info-image-glifo"
-                  alt={data.name}
-                />
-              </div>
-            }
           </div>
         </div>
       </div>
       <Footer />
-    </div>
+    </section>
   );
 }

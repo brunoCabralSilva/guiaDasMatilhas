@@ -1,5 +1,5 @@
 .carousel {
-  margin: 10px 0;
+  margin: 1.5vh 0;
   height: 75vh;
 }
 .item-carousel {
@@ -20,11 +20,11 @@
   color: $cleanWhite;
   font-family: $amatic;
   font-weight: bold;
-  font-size: 2.25rem;
+  font-size: 5.5vh;
   line-height: 2.5rem;
   width: 100%;
   text-align: center;
-  padding: 10px 0 20px 0;
+  padding: 1.5vh 0 1.5vh 0;
 }
 
 .swiper-slide-active {
@@ -39,7 +39,7 @@
 
 .swiper-button-next::after, .swiper-button-prev::after {
   color: white;
-  font-size: 60px;
+  font-size: 9vh;
   font-weight: bolder;
   -webkit-text-stroke-width: 1px; /* largura da borda */
   -webkit-text-stroke-color: $pureBlack /* cor da borda */
@@ -47,7 +47,7 @@
 
 @media screen and (max-width: 540px) {
   .swiper-button-next::after, .swiper-button-prev::after {
-    font-size: 20px !important;
+    font-size: 3vh !important;
     -webkit-text-stroke-width: 1px; /* largura da borda */
     -webkit-text-stroke-color: $pureBlack;
   }

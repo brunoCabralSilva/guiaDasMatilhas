@@ -12,7 +12,7 @@ body {
 
 footer {
   text-align: center;
-  padding: 10px 20px;
+  padding: 1.5vh 3vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -25,6 +25,6 @@ footer {
 @media screen and (max-width: 800px) {
   footer {
     flex-direction: column;
-    padding: 20px 20px;
+    padding: 3vh 3vh;
   }
 }

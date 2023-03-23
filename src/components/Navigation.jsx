@@ -71,7 +71,7 @@ export default function Navigation() {
             className="item-menu item-login"
             onClick={() => setShowMenu(!showMenu)}
           >
-            Login
+            Sair
           </Link>
         </nav>
       }

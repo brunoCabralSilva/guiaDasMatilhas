@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import './sass/main.scss';
 
 import Home from './pages/Home';
@@ -7,7 +7,6 @@ import Auspices from './pages/Auspices';
 import Breeds from './pages/Breeds';
 import About from './pages/About';
 import NotFound from './pages/NotFound';
-import Navigation from './components/Navigation';
 import Blog from './pages/Blog';
 import Gifts from './pages/Gifts';
 import Login from './pages/Login';
@@ -21,9 +20,10 @@ import Info from './pages/Info';
 export default function App() {
   return (
     <div>
-      <Navigation />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Navigate replace to='/login' />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/menu" element={ <Menu /> } />
         <Route path="/about" element={<About />} />
         <Route path="/trybes" element={<Trybes />} />
@@ -31,7 +31,6 @@ export default function App() {
         <Route path="/auspices" element={<Auspices />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/parceiros" element={<Friends />} />
-        <Route path="/login" element={<Login />} />
         <Route path="/rituals" element={<Rituals />} />
         <Route path="/dons" element={<Gifts />} />
         <Route path="/garou-nordeste" element={<GarouNordeste />} />

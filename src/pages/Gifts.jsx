@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { actionListGifts, actionResetFilters } from "../redux/actions";
 import { getCollection } from "../back/querys";
 import Gift from "../components/Gift";
+import Navigation from "../components/Navigation";
 
 export default function Gifts() {
   const [listGifts, setListGifts] = useState([]);
@@ -102,7 +103,7 @@ export default function Gifts() {
     if (globalState.token.length > 10 && globalState.role === 'administrator') {
       return (
         <button
-          className="admin-button"
+          className="admin-button-gift"
           // onClick={ () => setMinimize(!minimize) }
           >
           <h2 className="admin-button-title">Administrar Dons</h2>
@@ -112,32 +113,35 @@ export default function Gifts() {
   };
 
   return(
-    <div className="title-carousel">
-      <h1 className="title">Dons</h1>
-      <TextFromGifts />
-      { analizeAdm() }
-      <FilterGifts type="breeds" dir="racas" />
-      <FilterGifts type="trybes" dir="tribos" />
-      <FilterGifts type="auspices" dir="augurios" />
-      <FilterGifts type="ranks" dir="Postos" />
-      <FilterGifts type="books" dir="Livros" />
-      <button
-        className="search-button-gifts"
-        onClick={ searchGifts }
-      >
-        Realizar Busca
-      </button>
-      <div>
-        { returnMessageResult() }
-        <div className="list-gifts">
-        {
-          listGifts.length > 0 && listGifts.map((item, index) => (
-            <Gift item={ item } key={ index } />
-          ))
-        }
+    <section>
+      <div className="title-carousel">
+        <Navigation />
+        <h1 className="title">Dons</h1>
+        <TextFromGifts />
+        { analizeAdm() }
+        <FilterGifts type="breeds" dir="racas" />
+        <FilterGifts type="trybes" dir="tribos" />
+        <FilterGifts type="auspices" dir="augurios" />
+        <FilterGifts type="ranks" dir="Postos" />
+        <FilterGifts type="books" dir="Livros" />
+        <button
+          className="search-button-gifts"
+          onClick={ searchGifts }
+        >
+          Realizar Busca
+        </button>
+        <div>
+          { returnMessageResult() }
+          <div className="list-gifts">
+          {
+            listGifts.length > 0 && listGifts.map((item, index) => (
+              <Gift item={ item } key={ index } />
+            ))
+          }
+          </div>
         </div>
       </div>
       <Footer />
-    </div>
+    </section>
   );
 }

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Carousel from "../components/Carousel";
 import Footer from "../components/Footer";
+import Navigation from "../components/Navigation";
 import { queryDataValues } from "../redux/actions";
 
 export default function Auspices() {
@@ -17,13 +18,16 @@ export default function Auspices() {
   }, []);
 
   return(
-    <div className="title-carousel">
-      <h1 className="title">Augúrios</h1>
-      <Carousel
-        list={ [...globalState.listOfAuspices, ...globalState.listOfAuspices] }
-        dir="augurios"
-      />
+    <section>
+      <Navigation />
+      <div className="title-carousel">
+        <h1 className="title">Augúrios</h1>
+        <Carousel
+          list={ [...globalState.listOfAuspices, ...globalState.listOfAuspices] }
+          dir="augurios"
+        />
+      </div>
       <Footer />
-    </div>
+    </section>
   );
 }

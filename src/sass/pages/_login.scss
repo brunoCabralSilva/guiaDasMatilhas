@@ -1,5 +1,5 @@
 .section-login {
-  height: 90vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,34 +18,45 @@
   color: $cleanWhite;
   font-family: $andika;
   font-weight: 600;
-  height: 20px;
-  padding-bottom: 20px;
+  height: 3vh;
+  padding: 3vh 0;
+  width: 100%;
+  text-align: center;
+}
+
+.title-page-login {
+  color: $cleanWhite;
+  font-family: $amatic;
+  font-size: 8vh;
+  line-height: 8vh;
+  font-weight: 400;
+  padding: 0 3vh 3.75vh 3vh;
+  text-align: center;
 }
 
 .login-image {
-  width: 150px;
-  // margin-bottom: 40px;
+  width: 22.5vh;
 }
 
 .admin-input {
-  padding: 8px 0 8px 0;
-  font-size: 16px;
-  margin-bottom: 20px;
+  padding: 1.2vh 0 1.2vh 0;
+  font-size: 2.5vh;
+  margin-bottom: 3vh;
   text-align: center;
   width: 100%;
   font-family: $andika;
 }
 
 .admin-button {
-  padding: 8px;
-  font-size: 16px;
+  padding: 1.2vh;
+  font-size: 2.5vh;
   text-align: center;
   border: none;
   color: $cleanWhite;
   font-family: $andika;
   width: 100%;
   transition: color 1.5s;
-  border: 1px solid white;
+  border: 1px solid $cleanWhite;
   cursor: pointer;
   font-weight: 800;
 }

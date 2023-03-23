@@ -2,6 +2,7 @@ import ContactIcon from '../components/ContactIcon';
 import { useNavigate } from 'react-router-dom';
 import Footer from '../components/Footer';
 import { useEffect } from 'react';
+import Navigation from '../components/Navigation';
 
 export default function About() {
   const navigate = useNavigate();
@@ -9,7 +10,9 @@ export default function About() {
     window.scrollTo(0, 0);
   }, []);
   return(
+    <section>
     <div className="title-carousel">
+      <Navigation />
       <h1 className="title">Sobre</h1>
       <section>
         <div className="about-data">
@@ -91,8 +94,9 @@ export default function About() {
             </div>
           </div>
         </div>
-        <Footer />
       </section>
     </div>
+    <Footer />
+    </section>
   );
 }

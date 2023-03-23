@@ -16,7 +16,7 @@ export default function Login() {
   useEffect(() => {
     window.scrollTo(0, 0);
     if (globalState.token !== '') {
-      navigate('/admin');
+      navigate('/home');
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -33,7 +33,7 @@ export default function Login() {
     const logs = await login(email, password);
     if (logs) {
       dispatch(actionToken(logs));
-      navigate('/admin');
+      navigate('/home');
     } else {
       setErrorAuth(true);
       setTimeout(() => {
@@ -50,10 +50,10 @@ export default function Login() {
           alt="icone de lobo"
           className="login-image"
         />
+        <h1 className="title-page-login">
+          Guia das Matilhas
+        </h1>
         <div className="div-login">
-          { errorAuth 
-            ? <div className="error-message">Email ou senha incorretos</div>
-            : <div className="error-message" /> }
           <input
             className="admin-input"
             value={email}
@@ -85,6 +85,10 @@ export default function Login() {
             Login
           </button>
         </div>
+        { errorAuth 
+            ? <div className="error-message">Email ou senha incorretos</div>
+            : <div className="error-message" /> 
+        }
       </section>
       <Footer />
     </div>

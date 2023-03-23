@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Carousel from "../components/Carousel";
 import Footer from "../components/Footer";
+import Navigation from "../components/Navigation";
 import { queryDataValues } from "../redux/actions";
 
 export default function Breeds() {
@@ -17,13 +18,16 @@ export default function Breeds() {
   }, []);
 
   return(
-    <div className="title-carousel">
-      <h1 className="title">Raças</h1>
-      <Carousel
-        list={ [...globalState.listOfBreeds, ...globalState.listOfBreeds] }
-        dir="racas"
-      />
+    <section>
+      <Navigation />
+      <div className="title-carousel">
+        <h1 className="title">Raças</h1>
+        <Carousel
+          list={ [...globalState.listOfBreeds, ...globalState.listOfBreeds] }
+          dir="racas"
+        />
+      </div>
       <Footer />
-    </div>
+    </section>
   );
 }

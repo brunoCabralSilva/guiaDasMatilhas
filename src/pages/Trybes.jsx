@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Carousel from "../components/Carousel";
 import Footer from "../components/Footer";
+import Navigation from "../components/Navigation";
 import { queryDataValues } from "../redux/actions";
 
 export default function Trybes() {
@@ -17,13 +18,16 @@ export default function Trybes() {
   }, []);
 
   return(
-    <div className="title-carousel">
-      <h1 className="title">Tribos</h1>
-      <Carousel
-        list={ globalState.listOfTrybes }
-        dir="tribos"
-      />
+    <section>
+      <Navigation />
+      <div className="title-carousel">
+        <h1 className="title">Tribos</h1>
+        <Carousel
+          list={ globalState.listOfTrybes }
+          dir="tribos"
+        />
+      </div>
       <Footer />
-    </div>
+    </section>
   );
 }

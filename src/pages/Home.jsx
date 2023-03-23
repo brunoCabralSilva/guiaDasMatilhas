@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
 import { useSelector, useDispatch } from "react-redux";
 import { queryDataValues } from "../redux/actions";
+import Navigation from "../components/Navigation";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -19,6 +20,7 @@ export default function Home() {
 
   return(
     <section>
+      <Navigation />
       <header className="title-home">
         <h1 className="title-page">
           Guia das Matilhas

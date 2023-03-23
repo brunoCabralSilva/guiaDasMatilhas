@@ -19,7 +19,7 @@ export default function Navigation() {
         <Link className="item-menu" to='/about'> Sobre </Link>
         <Link className="item-menu" to='/profile'> Perfil </Link>
         <button
-          className="button-login-nav"
+          className="button-logout-nav"
           onClick={ () => {
             dispatch(actionLogout())
             navigate('/'); 

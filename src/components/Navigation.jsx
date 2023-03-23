@@ -22,7 +22,7 @@ export default function Navigation() {
           className="button-login-nav"
           onClick={ () => {
             dispatch(actionLogout())
-            navigate('/login'); 
+            navigate('/'); 
           }}
         >
           Sair
@@ -81,11 +81,10 @@ export default function Navigation() {
             Perfil
           </Link>
           <Link
-            to="/"
             className="item-menu item-login"
             onClick={() => {
               dispatch(actionLogout())
-              navigate('/login'); 
+              navigate('/'); 
               setShowMenu(!showMenu)}
             }
           >

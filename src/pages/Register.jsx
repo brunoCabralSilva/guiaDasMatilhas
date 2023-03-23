@@ -3,7 +3,7 @@ import Footer from "../components/Footer";
 import { actionToken } from '../redux/actions/index';
 import { login, verifyEmail } from "../back/login";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { registerUser } from "../back/register";
 
 export default function Register() {
@@ -19,11 +19,9 @@ export default function Register() {
   const [erPassword, setErPassword] = useState('');
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const globalState = useSelector((state) => state);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    if (globalState.user.token === '') navigate('/login');
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

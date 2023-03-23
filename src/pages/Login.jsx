@@ -15,7 +15,8 @@ export default function Login() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    if (globalState.user.token !== '') navigate('/home');
+    console.log(globalState.user.token);
+    if (globalState.user.token !== '') { navigate('/home'); }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

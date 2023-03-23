@@ -110,9 +110,13 @@ const reducer = (state = INITIAL_STATE, action) => {
         listOfBreeds: [],
         listOfAuspices: [],
         listOfGifts: [],
-        token: '',
-        user: '',
-        role:'',
+        user: {
+          token: '',
+          firstName: '',
+          lastName: '',
+          role: '',
+          email: '',
+        },
         filters: {
           books: [],
           generics: [],

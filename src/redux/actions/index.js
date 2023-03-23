@@ -53,7 +53,7 @@ export const actionResetFilters = () => {
 
 export const actionLogout = () => {
   return {
-    type: "RESET_FILTERS",
+    type: "LOGOUT",
   }
 }
 

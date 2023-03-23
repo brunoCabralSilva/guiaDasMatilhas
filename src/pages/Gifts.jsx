@@ -103,7 +103,7 @@ export default function Gifts() {
   }
 
   const analizeAdm = () => {
-    if (globalState.token.length > 10 && globalState.role === 'administrator') {
+    if (globalState.user.token.length > 10 && globalState.user.role === 'administrator') {
       return (
         <button
           className="admin-button-gift"

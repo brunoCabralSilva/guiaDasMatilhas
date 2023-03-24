@@ -2,15 +2,7 @@ import { useState } from "react";
 
 export default function Gift({ item }) {
   const [showDescription, setShowDescription] = useState(false);
-
-  // const firstLetterUpper = (nome) => {
-  //   let novoNome = nome[0].toUpperCase();
-  //   for (let i = 1; i < nome.length; i += 1) {
-  //     novoNome += nome[i];
-  //   }
-  //   return novoNome;
-  // }
-
+  console.log("item", item)
   return(
     <section 
       className={ showDescription ? 'w-full' : 'w-50'}
@@ -29,20 +21,13 @@ export default function Gift({ item }) {
             setShowDescription(!showDescription)
           }}
         >
-          <div
-            // className={ showDescription ? 'w-full' : 'w-50'}
-            // onClick={() => {
-            //   if(!showData) {
-            //     this.enableDisableGift()
-            //   } 
-            // }}
-          >
+          <div>
             <strong>
               {item.namePtBr && item.namePtBr.stringValue}
               {' ('}
               {item.nameOriginal && item.nameOriginal.stringValue}
               {') '}
-              - Posto {item.rank && item.rank.integerValue}
+              - Posto {item.rank && item.rank.stringValue}
             </strong>
           </div>
           {
@@ -63,29 +48,36 @@ export default function Gift({ item }) {
         { showDescription &&
           <div>
             <div className="data-gift"><strong>Fonte:</strong>
+              <span>{ ' ' }</span>
               {
                 item.font && item.font.arrayValue.values.map((f, index) => (
-                  <div key={index}>
-                    <span>{ f.stringValue }</span>
+                  <span key={index}>
+                    <span>{ f.mapValue.fields.book.stringValue }</span>
+                    <span>{ ' ' }</span>
+                    <span>{ f.mapValue.fields.page.stringValue }</span>
+                    <span>{ ' ' }</span>
+                    <span>{ f.mapValue.fields.edition.stringValue }</span>
                     <span>{ 
                         index === item.font.arrayValue.values.length -1 ? "." : ',' 
                       }
                     </span>
-                  </div>
+                    <span>{ ' ' }</span>
+                  </span>
                 ))
               }
             </div>
             <div className="data-gift">
-              <p><strong>Pertencente a: </strong></p>
+              <strong>Pertencente a: </strong>
               {
                 item.belong && item.belong.arrayValue.values.map((bel, index) => (
-                  <div key={index}>
+                  <span key={index}>
                     <span>{ bel.stringValue }</span>
                     <span>{ 
                         index === item.belong.arrayValue.values.length -1 ? "." : ',' 
                       }
                     </span>
-                  </div>
+                    <span>{ ' ' }</span>
+                  </span>
                 ))
               }
               </div>
@@ -103,13 +95,12 @@ export default function Gift({ item }) {
             {
               item.note && item.note.stringValue !== '' &&
               <div>
-                <div className="data-gift"><strong>Nota:</strong></div>
-                {/* { 
-                  edit
-                  ? <textarea className="text-black w-full" value={item.note.stringValue} onChange={(e) => this.setState({ note: e.target.value })} /> */}
-                  :
-                  <div className="data-gift">{ item.note.stringValue }</div>
-                {/* } */}
+                <div className="data-gift">
+                  <strong>Nota:</strong>
+                </div>
+                <div className="data-gift">
+                  { item.note.stringValue }
+                </div>
               </div>
             }
             <div className="data-gift"><strong>Description:</strong></div>

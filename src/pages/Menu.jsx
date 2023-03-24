@@ -33,7 +33,7 @@ export default function Menu() {
     {
       img: 'https://64.media.tumblr.com/e3a999e989e0f17dac10be8b649707eb/af64a96270ae26f2-dd/s400x600/c1164ced59af1891c7c60ca70613a4d4643d0bb9.gifv',
       name: 'Dons',
-      link: '/dons',
+      link: '/gifts',
     },
     {
       img: 'https://www.icegif.com/wp-content/uploads/waterfall-icegif.gif',
@@ -43,7 +43,7 @@ export default function Menu() {
     {
       img: 'https://64.media.tumblr.com/4393e9e60edec4a6e821d5f14892a87a/af64a96270ae26f2-ea/s400x600/e8c3dae337ef0dadb718ac4718cac91631265f5b.gifv',
       name: 'Parceiros',
-      link: '/parceiros',
+      link: '/friends',
     },
   ];
 

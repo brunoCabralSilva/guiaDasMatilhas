@@ -3,7 +3,10 @@ import {
   collection,
   getDocs,
   getDoc,
+  query,
+  where,
   doc,
+  addDoc,
 } from 'firebase/firestore/lite';
 import firebaseConfig from '../back/connection';
 
@@ -37,3 +40,25 @@ export const getById = async (type, id) => {
   console.log(docSnap._document.data.value.mapValue.fields);
   return docSnap._document.data.value.mapValue.fields;
 }
+
+export const getGiftByName = async (name) => {
+  const docRef = query(collection(db, "gifts"), where("nameOriginal", "==", name));
+  const querySnapshot = await getDocs(docRef);
+  return querySnapshot;
+}
+
+export const insertGift = async (gift) => {
+  const add = await addDoc(collection(db, "gifts"), {
+    nameOriginal: gift.nameOriginal,
+    namePtBr: gift.namePtBr,
+    note: gift.note,
+    rank: gift.rank,
+    systemOriginal: gift.systemOriginal,
+    systemPtBr: gift.systemPtBr,
+    belong: gift.listOfBelongs,
+    font: gift.listOfFonts,
+    textOriginal: gift.textOriginal,
+    textPtBr: gift.textPtBr,
+  });
+  console.log(add);
+};

@@ -107,7 +107,7 @@ export default function Gifts() {
       return (
         <button
           className="admin-button-gift"
-          // onClick={ () => setMinimize(!minimize) }
+          onClick={ () => navigate('/admin/gifts') }
           >
           <h2 className="admin-button-title">Administrar Dons</h2>
         </button>

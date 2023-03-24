@@ -5,12 +5,11 @@ import firebaseConfig from './connection';
 const db = getFirestore(firebaseConfig);
 
 export const registerUser = async (email, firstName, lastName, password) => {
-  const docRef = await addDoc(collection(db, "users"), {
+  await addDoc(collection(db, "users"), {
     email,
     firstName,
     lastName,
     password: md5(password),
     role: 'normal',
   });
-  console.log(docRef);
 };

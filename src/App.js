@@ -18,6 +18,7 @@ import Rituals from './pages/Rituals';
 import Info from './pages/Info';
 import Register from './pages/Register';
 import Profile from './pages/Profile';
+import AdmGifts from './pages/RegisterGift';
 
 export default function App() {
   return (
@@ -34,9 +35,10 @@ export default function App() {
         <Route path="/breeds" element={<Breeds />} />
         <Route path="/auspices" element={<Auspices />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/parceiros" element={<Friends />} />
+        <Route path="/friends" element={<Friends />} />
         <Route path="/rituals" element={<Rituals />} />
-        <Route path="/dons" element={<Gifts />} />
+        <Route path="/gifts" element={<Gifts />} />
+        <Route path="/admin/gifts" element={<AdmGifts />} />
         <Route path="/garou-nordeste" element={<GarouNordeste />} />
         <Route path="/matilha-da-kombi" element={<MatilhaDaKombi />} />
         <Route path="/:tipo/:id" element={<Info />} />

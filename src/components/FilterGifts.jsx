@@ -53,7 +53,6 @@ export default function FilterGifts({ type, dir }) {
     if(dir === "tribos" || dir === "racas" || dir === "augurios") {
       dispatch(actionFilGenerics(item.name.stringValue));
     } else if (dir === "Postos") {
-      console.log(item.rank);
       dispatch(actionFilRank(item.rank));
     } else {
       dispatch(actionFilBook(item.name.stringValue));
@@ -134,9 +133,6 @@ export default function FilterGifts({ type, dir }) {
           </div>
         </div>
       </div>
-      {
-        // console.log(globalState)
-      }
     </section>
   );
 }

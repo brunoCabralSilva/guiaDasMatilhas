@@ -7,7 +7,6 @@ import { useNavigate } from 'react-router-dom';
 export default function Profile() {
   const globalState = useSelector((state) => state);
   const navigate = useNavigate();
-  console.log('global', globalState);
 
   useEffect(() => {
     window.scrollTo(0, 0);

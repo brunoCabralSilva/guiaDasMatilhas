@@ -19,8 +19,6 @@ export default function Home() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  console.log(globalState);
-
   return(
     <section>
       <Navigation />

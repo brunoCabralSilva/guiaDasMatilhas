@@ -69,7 +69,7 @@ export default function Gift({ item }) {
                     {
                       bel.mapValue.fields.prerequisite.stringValue !== '' && 
                       <span>
-                        {' ( '}
+                        {' ( Campo: '}
                         { bel.mapValue.fields.prerequisite.stringValue }
                         {' )'}
                       </span>
@@ -84,12 +84,6 @@ export default function Gift({ item }) {
                 ))
               }
               </div>
-              {
-                item.prerequisites && item.prerequisites.stringValue !== '' &&
-                <div className="data-gift"><strong>Pré-Requisito: </strong>
-                { item.prerequisites }
-                </div>
-              }
             <div className="data-gift"><strong>Descrição: </strong></div>
             <div className="data-gift">
               { item.textPtBr && item.textPtBr.stringValue }

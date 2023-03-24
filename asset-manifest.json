@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/guiadasmatilhas/static/css/main.f8742ca4.css",
-    "main.js": "/guiadasmatilhas/static/js/main.99a95e92.js",
+    "main.css": "/guiadasmatilhas/static/css/main.eb8ec712.css",
+    "main.js": "/guiadasmatilhas/static/js/main.7949966b.js",
     "static/media/apresentation02.gif": "/guiadasmatilhas/static/media/apresentation02.38ff2f441a2949957d5f.gif",
     "static/media/getOfFenris_transp.png": "/guiadasmatilhas/static/media/getOfFenris_transp.69900d85ced254f824ed.png",
     "static/media/blackSpiralDancers_transp.png": "/guiadasmatilhas/static/media/blackSpiralDancers_transp.7ac82b882ce4ac282f3f.png",
@@ -153,11 +153,11 @@
     "static/media/ceu_noturno.jpeg": "/guiadasmatilhas/static/media/ceu_noturno.2b462db91177991b4fe1.jpeg",
     "static/media/wolf.png": "/guiadasmatilhas/static/media/wolf.53e9d69ce188d5a005e8.png",
     "index.html": "/guiadasmatilhas/index.html",
-    "main.f8742ca4.css.map": "/guiadasmatilhas/static/css/main.f8742ca4.css.map",
-    "main.99a95e92.js.map": "/guiadasmatilhas/static/js/main.99a95e92.js.map"
+    "main.eb8ec712.css.map": "/guiadasmatilhas/static/css/main.eb8ec712.css.map",
+    "main.7949966b.js.map": "/guiadasmatilhas/static/js/main.7949966b.js.map"
   },
   "entrypoints": [
-    "static/css/main.f8742ca4.css",
-    "static/js/main.99a95e92.js"
+    "static/css/main.eb8ec712.css",
+    "static/js/main.7949966b.js"
   ]
 }

@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/guiadasmatilhas/static/css/main.59e8d340.css",
-    "main.js": "/guiadasmatilhas/static/js/main.fefbf0f1.js",
+    "main.css": "/guiadasmatilhas/static/css/main.6e44a573.css",
+    "main.js": "/guiadasmatilhas/static/js/main.3c662b97.js",
     "static/media/apresentation02.gif": "/guiadasmatilhas/static/media/apresentation02.38ff2f441a2949957d5f.gif",
     "static/media/getOfFenris_transp.png": "/guiadasmatilhas/static/media/getOfFenris_transp.69900d85ced254f824ed.png",
     "static/media/blackSpiralDancers_transp.png": "/guiadasmatilhas/static/media/blackSpiralDancers_transp.7ac82b882ce4ac282f3f.png",
@@ -113,7 +113,6 @@
     "static/media/homid.png": "/guiadasmatilhas/static/media/homid.686403d18e3103b3354a.png",
     "static/media/Wendigo_semFundo.png": "/guiadasmatilhas/static/media/Wendigo_semFundo.a2c0202b6583d42c6466.png",
     "static/media/boneGnawers_semFundo.png": "/guiadasmatilhas/static/media/boneGnawers_semFundo.cca4fd793e9537dbc709.png",
-    "static/media/Crônicas da Kombi.png": "/guiadasmatilhas/static/media/Crônicas da Kombi.d4d8e354dfd0561d71b3.png",
     "static/media/apresentation01.png": "/guiadasmatilhas/static/media/apresentation01.218e9bdea98a1637336b.png",
     "static/media/Garou Nordeste2.png": "/guiadasmatilhas/static/media/Garou Nordeste2.f34c8bdaaff6fdfb7a0d.png",
     "static/media/garou_nordeste.jpg": "/guiadasmatilhas/static/media/garou_nordeste.f34c8bdaaff6fdfb7a0d.jpg",
@@ -127,6 +126,7 @@
     "static/media/nacaogarou.png": "/guiadasmatilhas/static/media/nacaogarou.487d7babbf22813c30fc.png",
     "static/media/kombi.jpg": "/guiadasmatilhas/static/media/kombi.339f7315df6de2db3d0c.jpg",
     "static/media/narradoresnarrados.jpeg": "/guiadasmatilhas/static/media/narradoresnarrados.e73e2f33ae4e72f3ed64.jpeg",
+    "static/media/Crônicas da Kombi.png": "/guiadasmatilhas/static/media/Crônicas da Kombi.26e591737e6c963bd240.png",
     "static/media/wolf_run.gif": "/guiadasmatilhas/static/media/wolf_run.67c8ac035834e2f424f6.gif",
     "static/media/brazilinthedarkness.png": "/guiadasmatilhas/static/media/brazilinthedarkness.a02eefca28326aeb3ea6.png",
     "static/media/jpg": "/guiadasmatilhas/static/media/d6c9df443bcedc11c6578d4da00c08dd.54e3307bc3f7d98da89b.jpg",
@@ -153,11 +153,11 @@
     "static/media/ceu_noturno.jpeg": "/guiadasmatilhas/static/media/ceu_noturno.2b462db91177991b4fe1.jpeg",
     "static/media/wolf.png": "/guiadasmatilhas/static/media/wolf.53e9d69ce188d5a005e8.png",
     "index.html": "/guiadasmatilhas/index.html",
-    "main.59e8d340.css.map": "/guiadasmatilhas/static/css/main.59e8d340.css.map",
-    "main.fefbf0f1.js.map": "/guiadasmatilhas/static/js/main.fefbf0f1.js.map"
+    "main.6e44a573.css.map": "/guiadasmatilhas/static/css/main.6e44a573.css.map",
+    "main.3c662b97.js.map": "/guiadasmatilhas/static/js/main.3c662b97.js.map"
   },
   "entrypoints": [
-    "static/css/main.59e8d340.css",
-    "static/js/main.fefbf0f1.js"
+    "static/css/main.6e44a573.css",
+    "static/js/main.3c662b97.js"
   ]
 }

@@ -50,18 +50,13 @@ export default function Gift({ item }) {
               <span>{ ' ' }</span>
               {
                 item.font && item.font.arrayValue.values.map((f, index) => (
-                  <span key={index}>
+                  <div key={index}>
                     <span>{ f.mapValue.fields.book.stringValue }</span>
-                    <span>{ ' ' }</span>
-                    <span>{ f.mapValue.fields.page.stringValue }</span>
-                    <span>{ ' ' }</span>
-                    <span>{ f.mapValue.fields.edition.stringValue }</span>
-                    <span>{ 
-                        index === item.font.arrayValue.values.length -1 ? "." : ',' 
-                      }
-                    </span>
-                    <span>{ ' ' }</span>
-                  </span>
+                    <span>{ ', ' }</span>
+                    <span>pág.{ f.mapValue.fields.page.stringValue }</span>
+                    <span>{ ', ' }</span>
+                    <span>Edição: { f.mapValue.fields.edition.stringValue }</span>
+                  </div>
                 ))
               }
             </div>
@@ -70,7 +65,17 @@ export default function Gift({ item }) {
               {
                 item.belong && item.belong.arrayValue.values.map((bel, index) => (
                   <span key={index}>
-                    <span>{ bel.stringValue }</span>
+                  {console.log(bel) }
+                    <span>{ bel.mapValue.fields.belong.stringValue }</span>
+                    {
+                      bel.mapValue.fields.prerequisite.stringValue !== '' && 
+                      <span>
+                        {' ( '}
+                        { bel.mapValue.fields.prerequisite.stringValue }
+                        {' )'}
+                      </span>
+                    }
+                    
                     <span>{ 
                         index === item.belong.arrayValue.values.length -1 ? "." : ',' 
                       }
@@ -81,7 +86,7 @@ export default function Gift({ item }) {
               }
               </div>
             <div className="data-gift"><strong>Pré-Requisito: </strong>
-            {/* { arraysubtypes } */}
+            { item.prerequisites }
             </div>
             <div className="data-gift"><strong>Descrição: </strong></div>
             <div className="data-gift">

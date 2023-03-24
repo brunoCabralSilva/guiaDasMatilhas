@@ -72,6 +72,13 @@
   align-items: center;
 }
 
+.div-belong-reg-gift {
+  width: 50vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 .button-verify-register-gift {
   padding: 1.5vh;
   border: 1px solid $cleanWhite;

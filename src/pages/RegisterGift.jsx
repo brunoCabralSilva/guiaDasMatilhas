@@ -19,6 +19,7 @@ export default function RegisterGift() {
   const [systemOriginal, setSystemOriginal] = useState('');
   const [listBooks, setListBooks] = useState([]);
   const [belong, setBelong] = useState('');
+  const [prerequisite, setPrerequisite] = useState('');
   const [listOfBelongs, setListOfBelongs] = useState([]);
   const [book, setBook] = useState('');
   const [page, setPage] = useState(0);
@@ -87,9 +88,10 @@ export default function RegisterGift() {
         type: "error",
       });
     } else {
-        setListOfBelongs([ ...listOfBelongs, belong]);
+        setListOfBelongs([ ...listOfBelongs, { belong, prerequisite }]);
     }
     setBelong('');
+    setPrerequisite('');
     const selectBelong = document.getElementById("selectBelong");
     selectBelong.selectedIndex = 0;
   };
@@ -138,6 +140,7 @@ export default function RegisterGift() {
         note,
         textOriginal,
         systemOriginal,
+        prerequisite,
       };
 
       try {
@@ -152,6 +155,7 @@ export default function RegisterGift() {
         setNote('');
         setTextOriginal('');
         setSystemOriginal('');
+        setPrerequisite('');
         const selectRank = document.getElementById("rank");
         selectRank.selectedIndex = 0;
         const selectBelong = document.getElementById("selectBelong");
@@ -178,7 +182,7 @@ export default function RegisterGift() {
           htmlFor="nameOriginal"
           className="label-register-gift"
         >
-          <span id="text-name-ptbr">Nome(Inglês):</span>
+          <span id="text-name-ptbr">Nome (Inglês):</span>
           <div className="div-verify-reg-gift">
             <input
               type="text"
@@ -200,7 +204,7 @@ export default function RegisterGift() {
           htmlFor="name"
           className="label-register-gift"
         >
-          <span>Nome(Pt-br):</span>
+          <span>Nome (Pt-Br):</span>
           <div className="div-verify-reg-gift">
           <input
             type="text"
@@ -335,7 +339,7 @@ export default function RegisterGift() {
           <span>
             Pertencente a:
           </span>
-          <div className="div-verify-reg-gift">
+          <div className="div-belong-reg-gift">
             <select
               id="selectBelong"
               className="select-reg-gift"
@@ -373,12 +377,27 @@ export default function RegisterGift() {
                 ))
               }
             </select>
+            <label
+              htmlFor="prerequisite"
+              className="label-register-gift"
+            >
+              <span id="text-name-ptbr">Pré-Requisito (campo):</span>
+              <div className="div-verify-reg-gift">
+                <input
+                  type="text"
+                  id="prerequisite"
+                  value={prerequisite}
+                  className="input-register-gift"
+                  onChange={ (e) => setPrerequisite(e.target.value) }
+                />
+              </div>
+            </label>
             <button
               type="button"
-              className="button-verify-register-gift btn-belong"
+              className="button-verify-register-gift btn-font"
               onClick={() => addNewBelong()}
             >
-              +
+              Adicionar referência
             </button>
           </div>
           <div className="div-verify-reg-gift">
@@ -387,7 +406,9 @@ export default function RegisterGift() {
                 listOfBelongs && listOfBelongs.map((bel, index) => (
                   <div key={index} className="belong-register-gift">
                     <div>
-                      { bel }
+                      { bel.belong }
+                      {' / '}
+                      { bel.prerequisite }
                     </div>
                     <button
                       type="button"

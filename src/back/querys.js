@@ -48,7 +48,7 @@ export const getGiftByName = async (name) => {
 }
 
 export const insertGift = async (gift) => {
-  const add = await addDoc(collection(db, "gifts"), {
+  await addDoc(collection(db, "gifts"), {
     nameOriginal: gift.nameOriginal,
     namePtBr: gift.namePtBr,
     note: gift.note,
@@ -59,6 +59,6 @@ export const insertGift = async (gift) => {
     font: gift.listOfFonts,
     textOriginal: gift.textOriginal,
     textPtBr: gift.textPtBr,
+    prerequisite: gift.prerequisite,
   });
-  console.log(add);
 };

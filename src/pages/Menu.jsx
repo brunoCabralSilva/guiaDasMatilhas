@@ -26,7 +26,7 @@ export default function Menu() {
       link: '/matilha-da-kombi',
     },
     {
-      img: 'https://media3.giphy.com/media/eGNpmOUeIIYUB4P4Al/giphy.gif?cid=790b76113d42c68657c63c771efd15378e71009f3ac51c5f&rid=giphy.gif&ct=g',
+      img: 'https://media4.giphy.com/media/S9hmjJG3ZL4gCSWXze/giphy.gif?cid=790b7611a6244ac30bd8cab58718cf6f40efb92a3b78e81a&rid=giphy.gif&ct=g',
       name: 'Blog',
       link: '/blog',
     },
@@ -36,7 +36,7 @@ export default function Menu() {
       link: '/gifts',
     },
     {
-      img: 'https://www.icegif.com/wp-content/uploads/waterfall-icegif.gif',
+      img: 'https://64.media.tumblr.com/46bfcab063ecc267e34e95f163a55870/8305528fa1608264-22/s640x960/4bf52343deb15f79350bd118c6a2d06fd192f045.gif',
       name: 'Rituais',
       link: '/rituals',
     },

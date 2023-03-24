@@ -308,8 +308,9 @@ export default function RegisterGift() {
                   <div className="">
                     <p className="">
                       {' '}
-                      { fonts.book }, 
-                      {' '}
+                      { fonts.book }
+                      {', '}
+                      {'Pág. '}
                       { fonts.page }
                       {', '}
                       <span className="font-bold">
@@ -407,8 +408,13 @@ export default function RegisterGift() {
                   <div key={index} className="belong-register-gift">
                     <div>
                       { bel.belong }
-                      {' / '}
-                      { bel.prerequisite }
+                      {
+                        bel.prerequisite !== '' &&
+                        <span>
+                          {' / '}
+                          { bel.prerequisite }
+                        </span>
+                      }
                     </div>
                     <button
                       type="button"

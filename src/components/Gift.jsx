@@ -65,7 +65,6 @@ export default function Gift({ item }) {
               {
                 item.belong && item.belong.arrayValue.values.map((bel, index) => (
                   <span key={index}>
-                  {console.log(bel) }
                     <span>{ bel.mapValue.fields.belong.stringValue }</span>
                     {
                       bel.mapValue.fields.prerequisite.stringValue !== '' && 
@@ -85,9 +84,12 @@ export default function Gift({ item }) {
                 ))
               }
               </div>
-            <div className="data-gift"><strong>Pré-Requisito: </strong>
-            { item.prerequisites }
-            </div>
+              {
+                item.prerequisites && item.prerequisites.stringValue !== '' &&
+                <div className="data-gift"><strong>Pré-Requisito: </strong>
+                { item.prerequisites }
+                </div>
+              }
             <div className="data-gift"><strong>Descrição: </strong></div>
             <div className="data-gift">
               { item.textPtBr && item.textPtBr.stringValue }

@@ -47,6 +47,7 @@
   position: absolute;
   margin: 1.5vh 1.5vh 0 0;
   font-size: 5vh;
+  cursor: pointer;
 }
 
 .pop-up-message {
@@ -75,3 +76,14 @@
   opacity: 60;
 }
 
+@media screen and (max-width: 450px) {
+  .secondary-div-pop-up {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .secondary-div-pop-up {
+    width: 70%;
+  }
+}

@@ -59,16 +59,20 @@ export default function Register() {
       else setErRPassword('');
     }
 
-    return !(vFirstName || vSecName || vEmail || vEqPassword || vPassword ||vRPassword);
+    return !(vFirstName || vSecName || vEmail || vEqPassword || vPassword ||vRPassword || logs);
   };
 
   const register = async () => {
     const validation = await validateData();
     if (validation) {
+      try {
       await registerUser(email, firstName, secName, password);
       const logs = await login(email, password);
       dispatch(actionToken(logs));
       navigate('/home');
+      } catch(error) {
+        window.alert(error.message);
+      }
     }
   }
 

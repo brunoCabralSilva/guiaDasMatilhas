@@ -2,7 +2,6 @@ import { useState } from "react";
 
 export default function Gift({ item }) {
   const [showDescription, setShowDescription] = useState(false);
-  console.log("item", item)
   return(
     <section 
       className={ showDescription ? 'w-full' : 'w-50'}

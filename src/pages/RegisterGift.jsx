@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import Navigation from "../components/Navigation";
 import { queryDataValues } from "../redux/actions";
 import { useNavigate } from 'react-router-dom';
+import PopUpMessage from "../components/PopUpMessage";
 
 export default function RegisterGift() {
   const [message, setMessage] = useState('');
@@ -39,8 +40,8 @@ export default function RegisterGift() {
       const listOfBooks = await books.map((book) => book.name.stringValue)
       setListBooks(listOfBooks);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     query();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const addFont = () => {
@@ -94,34 +95,82 @@ export default function RegisterGift() {
   };
 
   const verifyName = async () => {
-    if (nameOriginal.length <=2) setMessage("Necessário preencher um nome válido");
+    if (nameOriginal.length <=2) setMessage({ type: '', text: 'Necessário preencher um nome válido' });
     else {
       const query = await getGiftByName(nameOriginal);
-      if(query._docs.length !== 0) setMessage("Já existe um dom cadastrado com este nome");
-      else setMessage("Dom disponível para cadastro");
+      if(query._docs.length !== 0) setMessage({ type: 'error', text: 'Já existe um dom cadastrado com este nome' });
+      else setMessage({ type: 'sucess', text: 'Dom disponível para cadastro' });
     }
   };
 
   const addGift = async () => {
-    const newGift = {
-      nameOriginal,
-      namePtBr,
-      rank,
-      listOfFonts,
-      listOfBelongs,
-      textPtBr,
-      systemPtBr,
-      note,
-      textOriginal,
-      systemOriginal,
-    };
+    const query = await getGiftByName(nameOriginal);
+    if (query._docs.length !== 0) {
+      setMessage({ type: 'error', text: 'Dom já existe na base de dados original' });
+    } else if (nameOriginal === '' || nameOriginal.length < 4) {
+      setMessage({text: 'Necessário adicionar um nome em inglês para o Dom com pelo menos quatro caracteres', type: 'error' });
+    } else if (namePtBr === '' || namePtBr.length < 4) {
+      setMessage({type: 'error', text: 'Necessário adicionar um nome traduzido com pelo menos quatro caracteres para o dom' });
+    } else if (rank === 0 || rank === '') {
+      setMessage({ type: 'error', text: 'Necessário escolher um Posto' });
+    } else if (listOfFonts.length === 0) {
+      setMessage({ type: 'error', text: 'Necessário cadastrar um Livro como referência' });
+    } else if (listOfBelongs.length === 0) {
+      setMessage({ type: 'error', text: 'Necessário inserir a quem este dom pertence' });
+    } else if (textPtBr.length <= 10 ) {
+      setMessage({type: 'error', text: 'Necessário inserir uma descrição maior para o campo "Texto Traduzido"' });
+    } else if (systemPtBr.length <= 10 ) {
+      setMessage({type: 'error', text: 'Necessário inserir uma descrição maior para o campo "Sistema Traduzido"' });
+    } else if (textOriginal.length <= 10 ) {
+      setMessage({type: 'error', text: 'Necessário inserir uma descrição maior para o campo "Texto original"' });
+    } else if (systemOriginal.length <= 10 ) {
+      setMessage({type: 'error', text: 'Necessário inserir uma descrição maior para o campo "Sistema original"' });
+    }
+    else {
+      const newGift = {
+        nameOriginal,
+        namePtBr,
+        rank,
+        listOfFonts,
+        listOfBelongs,
+        textPtBr,
+        systemPtBr,
+        note,
+        textOriginal,
+        systemOriginal,
+      };
 
-    const addNewGift = await insertGift(newGift);
-    console.log(addNewGift);
+      try {
+        await insertGift(newGift);
+        setNameOriginal('')
+        setNamePtBr('');
+        setRank('');
+        setListOfFonts([]);
+        setListOfBelongs([]);
+        setTextPtBr('');
+        setSystemPtBr('');
+        setNote('');
+        setTextOriginal('');
+        setSystemOriginal('');
+        const selectRank = document.getElementById("rank");
+        selectRank.selectedIndex = 0;
+        const selectBelong = document.getElementById("selectBelong");
+        selectBelong.selectedIndex = 0;
+        const editionSelect = document.getElementById('edition');
+        editionSelect.selectedIndex = 0;
+        setMessage({ type: 'sucess', text: 'Dom adicionado com sucesso!' })
+      } catch(error) {
+        setMessage(error);
+    }
+  }
+
   };
 
   return(
     <section>
+      { 
+        message !== '' && <PopUpMessage message={message} setMessage={setMessage} />
+      }
       <Navigation />
       <div className="principal-div">
         <h1 className="title">Adicionar Dom</h1>

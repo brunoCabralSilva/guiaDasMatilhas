@@ -2,7 +2,7 @@
 
 <p align="center">Projeto idealizado por Thiago Lucas Martins da Silva e desenvolvido por Bruno Gabryell Cabral da Silva com o intuito de criar uma aplicação que facilite o acesso a informações voltadas ao jogo de RPG <strong>Lobisomem: O Apocalipse</strong>!</p>
 
-<h3 align="center">https://brunocabralsilva.github.io/guia-das-matilhas/</h3>
+<h3 align="center">https://brunocabralsilva.github.io/guiadasmatilhas/</h3>
 
 ![Tela Inicial da Aplicação](front-end/src/images/menu/apresentation01.png)
 
@@ -39,9 +39,22 @@
 <h2 id="mapeamento">Mapeamento do site </h2>
 
 <ol>
+
+<li><h4>Login</h4></li>
+
+<p>
+    Página onde é necessário que o usuário faça login para ter acesso ao conteúdo do site. Caso ainda não o possua, o usuário pode clicar em registrar e, não utilizando um e-mail já cadastrado na base de dados, criar um cadastro para si.
+</p>
+
+<li><h4>Home</h4></li>
+
+<p>
+Tela inicial para onde o usuário é redirecionado ao realizar o login. Por meio dela, o usuário pode utilizar a guia de navegação superior ou clicar na seta para baixo, onde será direcionado para o menu principal.
+</p>
+
 <li><h4>Menu Principal</h4></li> 
 
-<p>Lugar de acesso a diversas das informações do site. Por meio desta página, é possível ser direcionado para as páginas Dons, Admin, Fetiches, Parceiros, Garou Nordeste e Matilha da Kombi.</p>
+<p>Lugar de acesso a diversas das informações do site. Por meio desta página, é possível ser direcionado para as páginas Dons, Rituais, Blog, Parceiros, Garou Nordeste e Matilha da Kombi.</p>
 
 <p> </p>
 
@@ -59,11 +72,14 @@
 <p>Ao clicar uma vez, o item da lista selecionado é adicionado e pode ser visualizado em um pop-up no canto superior direito da tela. Ele pode ser removido clicando novamente no ícone ou desmarcando o checkbox referente ao mesmo no pop-up.</p>
 <p>Ao clicar em buscar, a aplicação retorna uma lista com todos os dons que se adequam aos filtros selecionados.</p>
 
+<p>
+OBS - Se estiver utilizando uma conta de Administrador, também haverá um botão para que o mesmo possa adicionar novos dons.</p>
+
 <li><h4>Rituais</h4></li>
 
 <p> Área do site ainda em processo de construção.</p>
 
-<li><h4>Fetiches</h4></li>
+<li><h4>Blog</h4></li>
 
 <p> Área do site ainda em processo de construção.</p>
 
@@ -81,17 +97,17 @@
 
 <li><h4>Tribos</h4></li>
 
-<p> Área do site onde são disponibilizadas as dezessete tribos para consulta. Em uma lista no formato carrossel, o usuário poderá navegar entre as imagens de cada tribo, além de, no futuro, ter acesso a informações sobre a tribo ao clicar em uma delas.</p>
+<p> Área do site onde são disponibilizadas as dezessete tribos para consulta. Em uma lista no formato carrossel, o usuário poderá navegar entre as imagens de cada tribo, além de, no futuro, ter acesso a informações sobre a tribo ao clicar em uma delas. Ao clicar em uma das tribos, o usuário é direcionado para uma página onde é possível obter detalhes da que foi selecionada.</p>
 
 <li><h4>Augúrios</h4></li>
 
-<p> Área do site onde são disponibilizados os cinco Augúrios para consulta. Em uma lista no formato carrossel, o usuário poderá navegar entre as imagens de cada augúrio, além de, no futuro, ter acesso a informações ao clicar em uma delas.</p>
+<p> Área do site onde são disponibilizados os cinco Augúrios para consulta. Em uma lista no formato carrossel, o usuário poderá navegar entre as imagens de cada augúrio, além de, no futuro, ter acesso a informações ao clicar em uma delas. Ao clicar em um dos Augúrios, o usuário é direcionado para uma página onde é possível obter detalhes do que foi selecionado.</p>
 
 <li><h4>Raças</h4></li>
 
-<p> Área do site onde são disponibilizadas as três raças para consulta. Em uma lista no formato carrossel, o usuário poderá navegar entre as imagens de cada raça, além de, no futuro, ter acesso a informações e pontos de vista dos autores ao clicar em um deles.</p>
+<p> Área do site onde são disponibilizadas as três raças para consulta. Em uma lista no formato carrossel, o usuário poderá navegar entre as imagens de cada raça, além de, no futuro, ter acesso a informações e pontos de vista dos autores ao clicar em um deles. Ao clicar em uma das Raças, o usuário é direcionado para uma página onde é possível obter detalhes da que foi selecionada.</p>
 
-<li><h4>Quem Somos</h4></li>
+<li><h4>Sobre</h4></li>
 
 <p> Lugar reservado para falarmos um pouco a respeito de quem somos, quem são nossos grupos e como tudo começou, além de serem compartilhados todos os nossos links de contato.</p>
 
@@ -99,16 +115,10 @@
 
 <p> Um usuário administrador poderá acessar as funcionalidades referentes a sua função clicando em "Admin", na página de Menu. Ele será direcionado para uma página de Login que, antes de mais nada, verificará se ele possui um token de validação salvo em seu local storage no navegador. Caso exista e seja válido, o usuário é automaticamente direcionado para página do painel administrativo. Caso não, é necessário fazer o login para prosseguir (ao realizar o login com sucesso, um token é gerado e salvo no local storage).</p>
 
-<li><h4>Painel Administrativo (Fluxo Administrador)</h4></li>
+<li><h4>Adicionar um dom (Fluxo administrador)</h4></li>
 
-<p> Lugar reservado para falarmos um pouco a respeito de quem somos, quem são nossos grupos e como tudo começou, além de serem compartilhados todos os nossos links de contato.</p>
-
-<li><h4>Painel de Dons (Fluxo Administrador)</h4></li>
-
-<p> Na página em questão, é possível Adicionar um novo dom e listá-los. Para adicionar um dom, o usuário precisa preencher todos os dados necessários, caso contrário não será possível registrar o mesmo no banco de dados. Dentre todas as validações, é necessário escolher um nome que não existe ainda no banco de dados, não existirem campos em branco além de "nota", entre outros.</p>
-
-<p> Ao Adicionar um dom, ele é imediatamente listado junto aos demais dons existentes na área "Listar Dons" da página. A partir desta área, o usuário administrador poderá excluir um dom ou editá-lo.</p>
-
+<p>Página disponível apenas para administradores, onde o usuário terá acesso a um formulário que deve ser preenchido corretamente para que seja cadastrado efetivamente um dom. Caso algum campo esteja fora do padrão esperado, uma mensagem de erro é exposta na tela explicando o que deve ser feito.
+</p>
 </ol>
 
 
@@ -117,15 +127,11 @@
 * `HTML5`
 * `CSS3`
 * `Javascript (ECMAScript 2018)`
-* `React (Context API, Router Dom, Icons)`
-* `Framer Motion`
-* `Tailwind CSS`
-* `Node JS`
-* `Express`
-* `Mysql`
-* `Deploy do Railway(Backend e Banco de Dados)`
+* `React (Router Dom, Icons)`
+* `React Redux`
+* `SASS`
+* `Firestore`
 * `Deploy do Gh Pages(Frontend)`
-* `Font Awesome`
 
 <h2 id="pessoas-envolvidas">Desenvolvedores e demais contribuidores</h2>
 

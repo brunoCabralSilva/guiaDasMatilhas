@@ -35,10 +35,11 @@ export default function Gifts() {
     let filteredGenerics = [];
 
     if(!listGenerics) {
+      console.log(listOfGifts);
       for (let i = 0; i < globalState.filters.generics.length; i += 1) {
         for (let j = 0; j < listOfGifts.length; j += 1) {
           for (let k = 0; k < listOfGifts[j].belong.arrayValue.values.length; k += 1) {
-            if(listOfGifts[j].belong.arrayValue.values[k].stringValue === globalState.filters.generics[i]) {
+            if(listOfGifts[j].belong.arrayValue.values[k].mapValue.fields.belong.stringValue === globalState.filters.generics[i]) {
               filteredGenerics.push(listOfGifts[j]);
             }
           }
@@ -65,10 +66,12 @@ export default function Gifts() {
     let filteredBooks = [];
 
     if (!listBooks) {
+      console.log(globalState.filters.books)
+      console.log(filteredRanks);
       for (let i = 0; i < globalState.filters.books.length; i += 1) {
         for (let j = 0; j < filteredRanks.length; j += 1) {
           for (let k = 0; k < filteredRanks[j].font.arrayValue.values.length; k += 1) {
-            if(filteredRanks[j].font.arrayValue.values[k].stringValue === globalState.filters.books[i]) {
+            if(filteredRanks[j].font.arrayValue.values[k].mapValue.fields.book.stringValue === globalState.filters.books[i]) {
               filteredBooks.push(filteredRanks[j]);
             }
           }

@@ -22,19 +22,22 @@ export default function FilterGifts({ type, dir }) {
       } else if (dir === "Livros") {
         const listOfGifts = await getCollection('gifts');
         const queryBooks = [];
+        console.log(listOfGifts);
         for (let j = 0; j < listOfGifts.length; j += 1) {
           for (let i = 0; i < listOfGifts[j].font.arrayValue.values.length; i += 1) {
-            if (queryBooks.includes(listOfGifts[j].font.arrayValue.values[i].stringValue)) {
+            if (queryBooks.includes(listOfGifts[j].font.arrayValue.values[i].mapValue.fields.book.stringValue)) {
 
             } else {
-              queryBooks.push(listOfGifts[j].font.arrayValue.values[i].stringValue);
+              queryBooks.push(listOfGifts[j].font.arrayValue.values[i].mapValue.fields.book.stringValue);
             }
           }
         }
 
         const queryBooksFormat = queryBooks.map((item) => ({ name: { stringValue: item }})).sort(function (x, y) {
-          const a = x.name.stringValue;
-          const b = y.name.stringValue;
+          console.log('query', queryBooks);
+          console.log(x, y);
+          const a = x;
+          const b = y;
           return a < b ? -1 : a > b ? 1 : 0;
         });
 

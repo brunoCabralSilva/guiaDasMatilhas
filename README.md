@@ -4,9 +4,9 @@
 
 <h3 align="center">https://brunocabralsilva.github.io/guiadasmatilhas/</h3>
 
-![Tela Inicial da Aplicação](front-end/src/images/menu/apresentation01.png)
+![Tela Inicial da Aplicação](src/images/menu/apresentation01.png)
 
-![Menu principal](front-end/src/images/menu/apresentation02.gif)
+![Menu principal](src/images/menu/apresentation02.gif)
 
 <p align="center">
 <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
@@ -110,6 +110,10 @@ OBS - Se estiver utilizando uma conta de Administrador, também haverá um botã
 <li><h4>Sobre</h4></li>
 
 <p> Lugar reservado para falarmos um pouco a respeito de quem somos, quem são nossos grupos e como tudo começou, além de serem compartilhados todos os nossos links de contato.</p>
+
+<li><h4>Perfil</h4></li>
+
+<p> Área onde é possível acessar dados sobre o usuário que está logado, como por exemplo nome e e-mail.</p>
 
 <li><h4>Adicionar um dom (Fluxo administrador)</h4></li>
 

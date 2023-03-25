@@ -130,7 +130,7 @@ OBS - Se estiver utilizando uma conta de Administrador, também haverá um botã
 * `React (Router Dom, Icons)`
 * `React Redux`
 * `SASS`
-* `Firestore`
+* `Firebase`
 * `Deploy do Gh Pages(Frontend)`
 
 <h2 id="pessoas-envolvidas">Desenvolvedores e demais contribuidores</h2>

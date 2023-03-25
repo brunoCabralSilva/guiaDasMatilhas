@@ -81,8 +81,12 @@ export default function Gifts() {
       filteredBooks = filteredRanks;
     }
 
-    setListGifts(filteredBooks);
-    dispatch(actionResetFilters());
+    if (filteredBooks.length === 0) {
+      setListGifts(['none']);
+    } else {
+      setListGifts(filteredBooks);
+      dispatch(actionResetFilters());
+    }
   };
 
   const returnMessageResult = () => {
@@ -140,7 +144,7 @@ export default function Gifts() {
           { returnMessageResult() }
           <div className="list-gifts">
           {
-            listGifts.length > 0 && listGifts.map((item, index) => (
+            listGifts[0] !== 'none' && listGifts.length > 0 && listGifts.map((item, index) => (
               <Gift item={ item } key={ index } />
             ))
           }

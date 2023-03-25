@@ -111,10 +111,6 @@ OBS - Se estiver utilizando uma conta de Administrador, também haverá um botã
 
 <p> Lugar reservado para falarmos um pouco a respeito de quem somos, quem são nossos grupos e como tudo começou, além de serem compartilhados todos os nossos links de contato.</p>
 
-<li><h4>Login (Fluxo Administrador)</h4></li>
-
-<p> Um usuário administrador poderá acessar as funcionalidades referentes a sua função clicando em "Admin", na página de Menu. Ele será direcionado para uma página de Login que, antes de mais nada, verificará se ele possui um token de validação salvo em seu local storage no navegador. Caso exista e seja válido, o usuário é automaticamente direcionado para página do painel administrativo. Caso não, é necessário fazer o login para prosseguir (ao realizar o login com sucesso, um token é gerado e salvo no local storage).</p>
-
 <li><h4>Adicionar um dom (Fluxo administrador)</h4></li>
 
 <p>Página disponível apenas para administradores, onde o usuário terá acesso a um formulário que deve ser preenchido corretamente para que seja cadastrado efetivamente um dom. Caso algum campo esteja fora do padrão esperado, uma mensagem de erro é exposta na tela explicando o que deve ser feito.

@@ -116,7 +116,7 @@ export default function Gifts() {
           className="admin-button-gift"
           onClick={ () => navigate('/admin/gifts') }
           >
-          <h2 className="admin-button-title">Administrar Dons</h2>
+          <h2 className="admin-button-title">Adicionar Dons</h2>
         </button>
       );
     } else return '';

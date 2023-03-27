@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/guiadasmatilhas/static/css/main.1b32317d.css",
-    "main.js": "/guiadasmatilhas/static/js/main.eb3f9faa.js",
+    "main.css": "/guiadasmatilhas/static/css/main.0add94e6.css",
+    "main.js": "/guiadasmatilhas/static/js/main.a98131a8.js",
     "static/media/apresentation02.gif": "/guiadasmatilhas/static/media/apresentation02.38ff2f441a2949957d5f.gif",
     "static/media/getOfFenris_transp.png": "/guiadasmatilhas/static/media/getOfFenris_transp.69900d85ced254f824ed.png",
     "static/media/blackSpiralDancers_transp.png": "/guiadasmatilhas/static/media/blackSpiralDancers_transp.7ac82b882ce4ac282f3f.png",
@@ -113,10 +113,10 @@
     "static/media/homid.png": "/guiadasmatilhas/static/media/homid.686403d18e3103b3354a.png",
     "static/media/Wendigo_semFundo.png": "/guiadasmatilhas/static/media/Wendigo_semFundo.a2c0202b6583d42c6466.png",
     "static/media/boneGnawers_semFundo.png": "/guiadasmatilhas/static/media/boneGnawers_semFundo.cca4fd793e9537dbc709.png",
-    "static/media/apresentation01.png": "/guiadasmatilhas/static/media/apresentation01.218e9bdea98a1637336b.png",
     "static/media/Garou Nordeste2.png": "/guiadasmatilhas/static/media/Garou Nordeste2.f34c8bdaaff6fdfb7a0d.png",
     "static/media/garou_nordeste.jpg": "/guiadasmatilhas/static/media/garou_nordeste.f34c8bdaaff6fdfb7a0d.jpg",
     "static/media/rageacrossbrasil.png": "/guiadasmatilhas/static/media/rageacrossbrasil.19d0526d3fc599e1e4b9.png",
+    "static/media/apresentation01.png": "/guiadasmatilhas/static/media/apresentation01.c08d5a6786d5e77cd7b6.png",
     "static/media/glassWalkers_book.jpg": "/guiadasmatilhas/static/media/glassWalkers_book.b4b603ac31a4b4c961af.jpg",
     "static/media/001.jpg": "/guiadasmatilhas/static/media/001.7732ba41059acaae2499.jpg",
     "static/media/rpgclandestino.png": "/guiadasmatilhas/static/media/rpgclandestino.d680c63003c4e4c07e96.png",
@@ -153,11 +153,11 @@
     "static/media/ceu_noturno.jpeg": "/guiadasmatilhas/static/media/ceu_noturno.2b462db91177991b4fe1.jpeg",
     "static/media/wolf.png": "/guiadasmatilhas/static/media/wolf.53e9d69ce188d5a005e8.png",
     "index.html": "/guiadasmatilhas/index.html",
-    "main.1b32317d.css.map": "/guiadasmatilhas/static/css/main.1b32317d.css.map",
-    "main.eb3f9faa.js.map": "/guiadasmatilhas/static/js/main.eb3f9faa.js.map"
+    "main.0add94e6.css.map": "/guiadasmatilhas/static/css/main.0add94e6.css.map",
+    "main.a98131a8.js.map": "/guiadasmatilhas/static/js/main.a98131a8.js.map"
   },
   "entrypoints": [
-    "static/css/main.1b32317d.css",
-    "static/js/main.eb3f9faa.js"
+    "static/css/main.0add94e6.css",
+    "static/js/main.a98131a8.js"
   ]
 }

@@ -87,6 +87,7 @@ export default function Register() {
       <div className="principal-div">
         <section className="section-login-register">
           <img
+            onClick={() => navigate('/')}
             src={require("../images/logos/wolf.png")}
             alt="icone de lobo"
             className="login-image"

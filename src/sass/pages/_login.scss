@@ -36,6 +36,7 @@
 
 .login-image {
   width: 22.5vh;
+  cursor: pointer
 }
 
 .admin-input {
@@ -86,6 +87,26 @@
 .admin-button-enable:hover, #btn-register:hover {
   transition: background-color 1.5s;
   background-color: $redColorLight;
+}
+
+.forgot-password {
+  color:$cleanWhite;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  cursor: pointer;
+  transition: color 1.5s;
+}
+
+.forgot-password:hover {
+  color: $twilight;
+}
+
+.btn-forgot {
+  margin: 3vh 0 3vh 0;
+}
+
+.register-forgot {
+  color: $twilight;
 }
 
 

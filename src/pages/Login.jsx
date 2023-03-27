@@ -95,6 +95,7 @@ export default function Login() {
               ? <div className="error-message">Email ou senha incorretos</div>
               : <div className="error-message" /> 
           }
+          <div className="forgot-password" onClick={ () => navigate('/forgot') }>Esqueci minha senha</div>
         </section>
       </div>
       <Footer />

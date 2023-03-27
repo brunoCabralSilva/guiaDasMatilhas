@@ -19,6 +19,7 @@ import Info from './pages/Info';
 import Register from './pages/Register';
 import Profile from './pages/Profile';
 import AdmGifts from './pages/RegisterGift';
+import Forgot from './pages/Forgot';
 
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
         <Route path="/" element={<Navigate replace to='/login' />} />
         <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/forgot" element={<Forgot />} />
         <Route path="/register" element={<Register />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/menu" element={ <Menu /> } />

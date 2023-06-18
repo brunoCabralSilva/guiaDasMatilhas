@@ -137,7 +137,6 @@ OBS - Se estiver utilizando uma conta de Administrador, também haverá um botã
 
 * <strong>Bruno Gabryell Cabral da Silva</strong> - idealizador e Desenvolvedor Web;
 * <strong>Thiago Lucas Martins da Silva</strong> - Idealizador, Tradutor, transcritor de textos e principal responsável por inserir dados na aplicação;
-* <strong>Erika Emanuelly da Silva Cruz</strong> - Experiência do Usuário;
 * <strong>Patrick Cosme de Oliveira</strong> - Experiência do Usuário;
 
 <h2 id="conclusão">Conclusão</h2>
